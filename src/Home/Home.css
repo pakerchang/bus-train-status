@@ -1,0 +1,32 @@
+.home {
+	text-align: center;
+	background-color: #dadbd3;
+	height: 100vh;
+}
+
+.home > h1 {
+	padding: 30px 0;
+}
+
+.home__search {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.home__train > h2,
+.home__bus > h2 {
+	margin-bottom: 20px;
+}
+
+.home__train > input,
+.home__bus > input {
+	border-radius: 15px;
+	padding: 10px;
+	margin-right: 5px;
+}
+
+.home__train > input:focus,
+.home__bus > input:focus {
+	outline: none;
+}

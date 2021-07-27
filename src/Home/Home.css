@@ -2,31 +2,33 @@
 	text-align: center;
 	background-color: #dadbd3;
 	height: 100vh;
+	/* 解決時刻表呈現資料過多導致超出幅度的狀況 */
+	overflow-y: scroll;
 }
 
 .home > h1 {
 	padding: 30px 0;
 }
 
-.home__search {
+.home__searchInfo {
 	display: flex;
-	align-items: center;
+	align-items: flex-start;
 	justify-content: space-around;
 }
 
-.home__train > h2,
-.home__bus > h2 {
+.home__searchTrain > h2,
+.home__searchBus > h2 {
 	margin-bottom: 20px;
 }
 
-.home__train > input,
-.home__bus > input {
+.home__searchTrain > input,
+.home__searchBus > input {
 	border-radius: 15px;
 	padding: 10px;
 	margin-right: 5px;
 }
 
-.home__train > input:focus,
-.home__bus > input:focus {
+.home__searchTrain > input:focus,
+.home__searchBus > input:focus {
 	outline: none;
 }

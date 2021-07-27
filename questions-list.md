@@ -1,17 +1,13 @@
-1. 解決HMAC認證機制問題 (Postman)
-    ans: import cURL指令
-2. 當使用者進入頁面設定好縣市及公車路線點擊輸入按鈕後，useEffect才開始作動
-    ans: 使用click function 處理資料後 在useEffect 委託資料依賴
+1. 解決 PostMan HMAC 認證問題
+   ans: import cURL 指令
 
-3. json 不知道如何根據key值抓取所需的資料結構，已能使用map單獨抓出想要的key值，但台鐵資料內的timeInfos是第二層json 尚不清楚如何取出（可能需要二次map資料）
+2.  當使用者進入頁面設定好縣市及公車路線點擊輸入按鈕後，useEffect 才開始作動
+   ans: 使用 click function 處理資料後 在 useEffect 委託資料依賴
 
-4. 串接測試火車時刻表發現 table 有破版問題，同時HomePage background-color的顏色並不會跟著Table產生的長度向下延伸
-    ans: 在home.css中加上 overflow-y : scroll; 後解決為延伸問題
+3. json 不知道如何根據 key 值抓取所需的資料結構，已能使用 map 單獨抓出想要的 key 值，但台鐵資料內的 timeInfos 是第二層 json 尚不清楚如何取出（可能需要二次處理資料）
 
+4. 串接測試火車時刻表發現 table 有破版問題，同時 HomePage background-color 的顏色並不會跟著 Table 產生的長度向下延伸
+   ans: 在 home.css 中加上 overflow-y : scroll; 後解決為延伸問題
 
-
-
-<!-- 台鐵火車時刻表
-/v2/Rail/TRA/LiveBoard/Station/{StationID}
-取得指定[車站]列車即時到離站電子看板(動態前後30分鐘的車次) -->
-
+5. 該如何調整 Material-UI Table Component CSS 的問題
+   ans: 查詢官網後，發現可以調用 CSS API 找到 className 進行設定 ex: .MuiTable-root

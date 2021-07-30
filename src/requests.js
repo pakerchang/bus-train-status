@@ -1,6 +1,6 @@
 const request = (stationInfo) => {
 	return {
-		daily: `https://ptx.transportdata.tw/MOTC/v3/Rail/TRA/DailyTrainTimetable/OD/${stationInfo.originStation}/to/${stationInfo.destinationStation}/${stationInfo.date}?$top=1&$format=JSON`,
+		daily: `https://ptx.transportdata.tw/MOTC/v3/Rail/TRA/DailyTrainTimetable/OD/${stationInfo.originStation}/to/${stationInfo.destinationStation}/${stationInfo.date}?$top=30&$format=JSON`,
 	};
 };
 

@@ -13,7 +13,7 @@
 ,
 {"stationID":"0990","stationNameTW":"松山","stationNameEN":"Songshan"}
 ,
-{"stationID":"1000","stationNameTW":"臺北","stationNameEN":"Taipei"}
+{"stationID":"1000","stationNameTW":"台北","stationNameEN":"Taipei"}
 ,
 {"stationID":"1010","stationNameTW":"萬華","stationNameEN":"Wanhua"}
 ,
@@ -83,7 +83,7 @@
 ,
 {"stationID":"2200","stationNameTW":"大甲","stationNameEN":"Dajia"}
 ,
-{"stationID":"2210","stationNameTW":"臺中港","stationNameEN":"Taichung Port"}
+{"stationID":"2210","stationNameTW":"台中港","stationNameEN":"Taichung Port"}
 ,
 {"stationID":"2220","stationNameTW":"清水","stationNameEN":"Cingshuei"}
 ,
@@ -147,7 +147,7 @@
 ,
 {"stationID":"4200","stationNameTW":"永康","stationNameEN":"Yongkang"}
 ,
-{"stationID":"4220","stationNameTW":"臺南","stationNameEN":"Tainan"}
+{"stationID":"4220","stationNameTW":"台南","stationNameEN":"Tainan"}
 ,
 {"stationID":"4250","stationNameTW":"保安","stationNameEN":"Baoan"}
 ,
@@ -197,7 +197,7 @@
 ,
 {"stationID":"3250","stationNameTW":"潭子","stationNameEN":"Tanzih"}
 ,
-{"stationID":"3300","stationNameTW":"臺中","stationNameEN":"Taichung"}
+{"stationID":"3300","stationNameTW":"台中","stationNameEN":"Taichung"}
 ,
 {"stationID":"3330","stationNameTW":"烏日","stationNameEN":"Wurih"}
 ,
@@ -313,7 +313,7 @@
 ,
 {"stationID":"6010","stationNameTW":"山里","stationNameEN":"Shanli"}
 ,
-{"stationID":"6000","stationNameTW":"臺東","stationNameEN":"Taitung"}
+{"stationID":"6000","stationNameTW":"台東","stationNameEN":"Taitung"}
 ,
 {"stationID":"7110","stationNameTW":"永樂","stationNameEN":"Yongle"}
 ,

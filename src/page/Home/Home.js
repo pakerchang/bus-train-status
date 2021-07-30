@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import BusList from "../../Components/BusList";
 import TrainList from "../../Components/TrainList";
-
+import stationList from "../../json/StationList.json";
 import "./Home.css";
 
 function Home() {
@@ -18,11 +18,19 @@ function Home() {
 
 	const searchButton = (e) => {
 		e.preventDefault();
-		setTrainOrigin("");
-		setTrainDestination("");
+		// setTrainOrigin("");
+		// setTrainDestination("");
+
+		const startStation = stationList.find((item) =>
+			trainOrigin.includes(item.stationNameTW)
+		);
+		const endStation = stationList.find((item) =>
+			trainDestination.includes(item.stationNameTW)
+		);
+
 		return setSearchInfo({
-			originStation: trainOrigin,
-			destinationStation: trainDestination,
+			originStation: startStation.stationID,
+			destinationStation: endStation.stationID,
 			date: date,
 		});
 	};

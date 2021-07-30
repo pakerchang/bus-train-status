@@ -1,7 +1,10 @@
 // const trainStationName = require("./json/StationList.json");
-const trainSchedule = require("./json/trainSchedule.json");
 
+import trainSchedule from "./json/StationList.json";
+
+console.log(trainSchedule);
 // 過濾掉不是區間或區間快的車種
+
 const finalItems = trainSchedule.TrainInfo.filter((item) =>
 	["1132"].includes(item.CarClass)
 );
@@ -15,4 +18,4 @@ const trainInfo = finalItems.map((item) => ({
 	timeInfo: item.TimeInfos, // 班次時間、站點等資料
 }));
 // console.log(trainInfo);
-export default trainInfo;
+// export default trainInfo;

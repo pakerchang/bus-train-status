@@ -1,5 +1,3 @@
-
-
 // const trainStationName = require("./json/StationList.json");
 const trainSchedule = require("./json/trainSchedule.json");
 

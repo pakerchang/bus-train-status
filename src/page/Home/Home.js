@@ -1,7 +1,6 @@
-import React from "react";
-import { useState, useEffect } from "react";
-import BusList from "../Component/BusList";
-import TrainList from "../Component/TrainList";
+import React, { useState } from "react";
+import BusList from "../../Components/BusList";
+import TrainList from "../../Components/TrainList";
 
 import "./Home.css";
 
@@ -12,29 +11,22 @@ function Home() {
 	const [busRoute, setBusRoute] = useState("");
 	const [searchInfo, setSearchInfo] = useState([]);
 
-	const trainOriginInput = (e) => {
-		setTrainOrigin(e.target.value);
-	};
-	const trainDestinationInput = (e) => {
-		setTrainDestination(e.target.value);
-	};
-	const busRouteInput = (e) => {
-		setBusRoute(e.target.value);
-	};
+	// get local date
+	const date = new Date()
+		.toLocaleDateString()
+		.replaceAll("/", "-");
 
-	// console.log(trainOrigin, trainDestination, busRoute);
-
-	const searchButton = () => {
-		const date = new Date()
-			.toLocaleDateString()
-			.replaceAll("/", "-");
+	const searchButton = (e) => {
+		e.preventDefault();
+		setTrainOrigin("");
+		setTrainDestination("");
 		return setSearchInfo({
-			date,
-			trainOrigin,
-			trainDestination,
-			busRoute,
+			originStation: trainOrigin,
+			destinationStation: trainDestination,
+			date: date,
 		});
 	};
+
 	return (
 		<div className="home">
 			<h1>火車及公車時刻表查詢</h1>
@@ -47,13 +39,19 @@ function Home() {
 							className="home__trainStation"
 							type="text"
 							placeholder="出發站"
-							onChange={trainOriginInput}
+							value={trainOrigin}
+							onChange={(e) =>
+								setTrainOrigin(e.target.value)
+							}
 						/>
 						<input
 							className="home__trainStation"
 							type="text"
 							placeholder="抵達站"
-							onChange={trainDestinationInput}
+							value={trainDestination}
+							onChange={(e) =>
+								setTrainDestination(e.target.value)
+							}
 						/>
 						<button
 							className="searchBtn"
@@ -61,11 +59,7 @@ function Home() {
 							查詢
 						</button>
 						{/* 顯示火車時刻表單 */}
-						<TrainList
-							date={searchInfo.date}
-							trainOrigin={searchInfo.trainOrigin}
-							trainDestination={searchInfo.trainDestination}
-						/>
+						<TrainList searchInfo={searchInfo} />
 					</div>
 
 					<div className="home__searchBus">
@@ -73,10 +67,10 @@ function Home() {
 						<input
 							type="text"
 							placeholder="路線"
-							onChange={busRouteInput}
+							onChange={(e) => setBusRoute(e.target.value)}
 						/>
-						{/* 顯示公車時刻表單 */}
-						<BusList busRoute={searchInfo.busRoute} />
+						顯示公車時刻表單
+						<BusList />
 					</div>
 				</form>
 			</div>

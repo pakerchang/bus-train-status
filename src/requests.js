@@ -1,14 +1,10 @@
-import getAuthorizationHeader from "./apiKey.js";
-
-const requestTRA = ({
-	OriginStation,
-	DestinationStation,
-	DateTime,
-}) => {
-    // 台鐵  取得指定[日期],[起迄站間]之站間時刻表資料
-	return `https://ptx.transportdata.tw/MOTC/v3/Rail/TRA/DailyTrainTimetable/OD/${OriginStation}/to/${DestinationStation}/${DateTime}?$top=30&$format=JSON`;
+const request = (stationInfo) => {
+	return {
+		daily: `https://ptx.transportdata.tw/MOTC/v3/Rail/TRA/DailyTrainTimetable/OD/${stationInfo.originStation}/to/${stationInfo.destinationStation}/${stationInfo.date}?$top=1&$format=JSON`,
+	};
 };
 
+export default request;
 
 // 台鐵火車時刻表
 // /v2/Rail/TRA/LiveBoard/Station/{StationID}

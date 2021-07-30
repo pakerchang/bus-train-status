@@ -24,4 +24,4 @@ const getAuthorizationHeader = function () {
 
 
 
-export default getAuthorizationHeader();
+export default getAuthorizationHeader;

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-
+import trainTypeCode from "../json/trainType.json";
 import "./TrainList.css";
 import {
 	Table,
@@ -14,7 +14,7 @@ import request from "../requests";
 import getAuthorizationHeader from "../apiKey";
 
 function TrainList({ searchInfo }) {
-	const [trainInfo, setTrainInfo] = useState([]);
+	const [data, setData] = useState([]);
 	useEffect(() => {
 		const reqURL = request(searchInfo).daily;
 
@@ -22,14 +22,35 @@ function TrainList({ searchInfo }) {
 
 		axios
 			.get(reqURL, { headers: getAuthorizationHeader() })
-			.then((res) => setTrainInfo(res.data.TrainTimetables))
+			.then((res) => setData(res.data.TrainTimetables))
 			.catch((error) => console.log(error));
 	}, [searchInfo]);
-	console.log("trainInfo: ", trainInfo);
+
+	const trainInfo = data.map((item) => ({
+		trainID: item.TrainInfo.TrainNo,
+		trainType: item.TrainInfo.TrainTypeCode,
+		departure: item.StopTimes[0].DepartureTime,
+		arrival: item.StopTimes[1].ArrivalTime,
+	}));
+	
+	console.log(trainInfo.map((item) => item.trainType));
+	const replaceTrainType = () => {
+		trainTypeCode.find((code) => {
+			trainInfo.TrainInfo.TrainTypeCode.includes(
+				code.TypeCode
+			);
+		});
+	};
+
 	// 需要處理邏輯的資料
 	// 行車順行逆行
-	// StopTimes內的停靠順序決定區分投放處
 	// 行駛時間計算
+	// 修改車種名稱
+
+	//排序
+	trainInfo.sort((first, second) => {
+		return first.departure.localeCompare(second.departure);
+	});
 
 	return (
 		<div className="trainList">
@@ -40,20 +61,20 @@ function TrainList({ searchInfo }) {
 							<TableCell align="center">車種車次</TableCell>
 							<TableCell align="center">出發時間</TableCell>
 							<TableCell align="center">抵達時間</TableCell>
-							<TableCell align="center">行駛時間</TableCell>
+							{/* <TableCell align="center">行駛時間</TableCell> */}
 						</TableRow>
 					</TableHead>
 					<TableBody>
 						{trainInfo.map((item) => (
 							<TableRow>
 								<TableCell align="center">
-									{item.TrainInfo.TrainTypeName.Zh_tw}
+									{item.trainType + " " + item.trainID}
 								</TableCell>
 								<TableCell align="center">
-									{item.StopTimes[0].DepartureTime}
+									{item.departure}
 								</TableCell>
 								<TableCell align="center">
-									{item.StopTimes[1].ArrivalTime}
+									{item.arrival}
 								</TableCell>
 							</TableRow>
 						))}

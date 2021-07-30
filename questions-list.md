@@ -5,6 +5,7 @@
    ans: 使用 click function 處理資料後 在 useEffect 委託資料依賴
 
 3. json 不知道如何根據 key 值抓取所需的資料結構，已能使用 map 單獨抓出想要的 key 值，但台鐵資料內的 timeInfos 是第二層 json 尚不清楚如何取出（可能需要二次處理資料）
+   Ans: ex res.data.(下一層的key值)
 
 4. 串接測試火車時刻表發現 table 有破版問題，同時 HomePage background-color 的顏色並不會跟著 Table 產生的長度向下延伸
    ans: 在 home.css 中加上 overflow-y : scroll; 後解決為延伸問題

@@ -14,8 +14,6 @@ TripLine
 //每日行駛
 Note
 
-
-
 StopTimes >
 //停靠順順序
 StopSequence

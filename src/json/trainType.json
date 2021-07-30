@@ -1,0 +1,10 @@
+[
+	{ "TypeCode": "1", "Name": "太魯閣" },
+	{ "TypeCode": "2", "Name": "普悠瑪" },
+	{ "TypeCode": "3", "Name": "自強" },
+	{ "TypeCode": "4", "Name": "莒光" },
+	{ "TypeCode": "5", "Name": "復興" },
+	{ "TypeCode": "6", "Name": "區間" },
+	{ "TypeCode": "7", "Name": "普快" },
+	{ "TypeCode": "10", "Name": "區間快" }
+]

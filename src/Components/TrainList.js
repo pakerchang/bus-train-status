@@ -27,20 +27,21 @@ function TrainList({ searchInfo }) {
 	}, [searchInfo]);
 
 	const trainInfo = data.map((item) => ({
+		// trainType: item.TrainInfo.TrainTypeCode,
 		trainID: item.TrainInfo.TrainNo,
-		trainType: item.TrainInfo.TrainTypeCode,
+		trainType: item.TrainInfo.TrainTypeName.Zh_tw,
 		departure: item.StopTimes[0].DepartureTime,
 		arrival: item.StopTimes[1].ArrivalTime,
 	}));
-	
-	console.log(trainInfo.map((item) => item.trainType));
-	const replaceTrainType = () => {
-		trainTypeCode.find((code) => {
-			trainInfo.TrainInfo.TrainTypeCode.includes(
-				code.TypeCode
-			);
-		});
-	};
+
+	// console.log(trainInfo.map((item) => item.trainType));
+	// const replaceTrainType = () => {
+	// 	trainTypeCode.find((code) => {
+	// 		trainInfo.TrainInfo.TrainTypeCode.includes(
+	// 			code.TypeCode
+	// 		);
+	// 	});
+	// };
 
 	// 需要處理邏輯的資料
 	// 行車順行逆行
@@ -59,6 +60,7 @@ function TrainList({ searchInfo }) {
 					<TableHead>
 						<TableRow>
 							<TableCell align="center">車種車次</TableCell>
+							<TableCell align="center">車次</TableCell>
 							<TableCell align="center">出發時間</TableCell>
 							<TableCell align="center">抵達時間</TableCell>
 							{/* <TableCell align="center">行駛時間</TableCell> */}
@@ -68,7 +70,10 @@ function TrainList({ searchInfo }) {
 						{trainInfo.map((item) => (
 							<TableRow>
 								<TableCell align="center">
-									{item.trainType + " " + item.trainID}
+									{item.trainType}
+								</TableCell>
+								<TableCell align="center">
+									{item.trainID}
 								</TableCell>
 								<TableCell align="center">
 									{item.departure}

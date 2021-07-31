@@ -12,10 +12,7 @@ export default request;
 
 // /v2/Rail/TRA/DailyTimetable/OD/{OriginStationID}/to/{DestinationStationID}/{TrainDate}
 
-//
-
 // 公車時刻表
-
 // /v2/Bus/Schedule/City/{City}
 // 取得指定[縣市]的市區公車路線班表資料
 // https://ptx.transportdata.tw/MOTC?t=Bus&v=2#!/CityBus/CityBusApi_Schedule

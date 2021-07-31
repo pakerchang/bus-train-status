@@ -18,16 +18,14 @@ function Home() {
 
 	const searchButton = (e) => {
 		e.preventDefault();
-		// setTrainOrigin("");
-		// setTrainDestination("");
-
 		const startStation = stationList.find((item) =>
 			trainOrigin.includes(item.stationNameTW)
 		);
 		const endStation = stationList.find((item) =>
 			trainDestination.includes(item.stationNameTW)
 		);
-
+		// setTrainOrigin("");
+		// setTrainDestination("");
 		return setSearchInfo({
 			originStation: startStation.stationID,
 			destinationStation: endStation.stationID,

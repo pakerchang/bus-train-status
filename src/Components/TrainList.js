@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import trainTypeCode from "../json/trainType.json";
 import "./TrainList.css";
 import {
 	Table,
@@ -17,9 +16,7 @@ function TrainList({ searchInfo }) {
 	const [data, setData] = useState([]);
 	useEffect(() => {
 		const reqURL = request(searchInfo).daily;
-
 		// console.log("reqURL:  ", reqURL);
-
 		axios
 			.get(reqURL, { headers: getAuthorizationHeader() })
 			.then((res) => setData(res.data.TrainTimetables))
@@ -33,16 +30,6 @@ function TrainList({ searchInfo }) {
 		departure: item.StopTimes[0].DepartureTime,
 		arrival: item.StopTimes[1].ArrivalTime,
 	}));
-
-	// console.log(trainInfo.map((item) => item.trainType));
-	// const replaceTrainType = () => {
-	// 	trainTypeCode.find((code) => {
-	// 		trainInfo.TrainInfo.TrainTypeCode.includes(
-	// 			code.TypeCode
-	// 		);
-	// 	});
-	// };
-
 	// 需要處理邏輯的資料
 	// 行車順行逆行
 	// 行駛時間計算
@@ -70,7 +57,7 @@ function TrainList({ searchInfo }) {
 						{trainInfo.map((item) => (
 							<TableRow>
 								<TableCell align="center">
-									{item.trainType}
+									{item.trainType.replace(/\([^()]*\)/g, '')}
 								</TableCell>
 								<TableCell align="center">
 									{item.trainID}

@@ -1,36 +1,52 @@
 import React, { useState } from "react";
+import stationInfo from "../../json/StationInfo.json";
+import "./Home.css";
 import BusList from "../../Components/BusList";
 import TrainList from "../../Components/TrainList";
-import stationList from "../../json/StationList.json";
-import "./Home.css";
 
 function Home() {
-	const [trainOrigin, setTrainOrigin] = useState("");
+	const [trainOrigin, setTrainOrigin] = useState("高雄");
 	const [trainDestination, setTrainDestination] =
-		useState("");
-	const [busRoute, setBusRoute] = useState("");
+		useState("台南");
+	const [city, setCity] = useState("");
+	const [busRoute, setBusRoute] = useState("藍幹線");
 	const [searchInfo, setSearchInfo] = useState([]);
 
-	// get local date
+	// 抓取當地時間f
 	const date = new Date()
 		.toLocaleDateString()
 		.replaceAll("/", "-");
 
 	const searchButton = (e) => {
 		e.preventDefault();
-		const startStation = stationList.find((item) =>
-			trainOrigin.includes(item.stationNameTW)
-		);
-		const endStation = stationList.find((item) =>
-			trainDestination.includes(item.stationNameTW)
-		);
-		// setTrainOrigin("");
-		// setTrainDestination("");
-		return setSearchInfo({
-			originStation: startStation.stationID,
-			destinationStation: endStation.stationID,
-			date: date,
-		});
+		// 將車站名轉換成車站編號
+		if (
+			trainOrigin &&
+			trainDestination &&
+			busRoute !== ""
+		) {
+			const startStation = stationInfo.find((item) =>
+				trainOrigin.includes(item.StationName.Zh_tw)
+			);
+			// 將車站名轉換成車站編號
+			const endStation = stationInfo.find((item) =>
+				trainDestination.includes(item.StationName.Zh_tw)
+			);
+			// console.log(startStation, endStation);
+			// setTrainOrigin("");
+			// setTrainDestination("");
+
+			return setSearchInfo({
+				originStation: startStation.StationID,
+				destination: endStation.StationID,
+				date: date,
+				positionLat: endStation.StationPosition.PositionLat,
+				positionLon: endStation.StationPosition.PositionLon,
+				busRoute: busRoute,
+			});
+		} else {
+			alert("請輸入站別或路線");
+		}
 	};
 
 	return (
@@ -59,24 +75,41 @@ function Home() {
 								setTrainDestination(e.target.value)
 							}
 						/>
-						<button
-							className="searchBtn"
-							onClick={searchButton}>
-							查詢
-						</button>
-						{/* 顯示火車時刻表單 */}
-						<TrainList searchInfo={searchInfo} />
-					</div>
 
+						{/* 顯示火車時刻表單 */}
+						<TrainList
+							originStation={searchInfo.originStation}
+							destination={searchInfo.destination}
+							date={searchInfo.date}
+						/>
+					</div>
+					<button
+						className="searchBtn"
+						onClick={searchButton}>
+						查詢
+					</button>
 					<div className="home__searchBus">
 						<h2>公車時刻表</h2>
+						{/* select option */}
+						<input
+							type="text"
+							placeholder="縣市"
+							// onChange={(e) => setCity(e.target.value)}
+						/>
 						<input
 							type="text"
 							placeholder="路線"
 							onChange={(e) => setBusRoute(e.target.value)}
 						/>
-						顯示公車時刻表單
-						<BusList />
+						{/* 顯示公車時刻表單 */}
+						<BusList
+							// busRoute={searchInfo.busRoute}
+							// city={searchInfo.city}
+							// position={searchButton.busPosition}
+							positionLat={searchInfo.positionLat}
+							positionLon={searchInfo.positionLon}
+							busRoute={searchInfo.busRoute}
+						/>
 					</div>
 				</form>
 			</div>

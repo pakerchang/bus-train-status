@@ -11,10 +11,11 @@ Project Description
 
 ### In Progress
 
-- [ ] 串接公車api  
 
 ### Done ✓
 
+- [x] 串接公車api  
+- [x] 處理公車動態資料 status 429問題  
 - [x] 修改車種顯示方式  
 - [x] 火車時間排序  
 - [x] 台鐵車次資料二次解構  

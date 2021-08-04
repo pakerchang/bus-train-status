@@ -32,3 +32,19 @@
 .home__searchBus > input:focus {
 	outline: none;
 }
+
+.searchBtn {
+	margin-top: 50px;
+	padding: 30px 30px;
+	background-color: #fff;
+	border-radius: 50px;
+	border: none
+}
+
+.searchBtn:hover {
+	background-color: goldenrod;
+}
+
+.searchBtn:focus {
+	outline: none;
+}

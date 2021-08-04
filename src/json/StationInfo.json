@@ -1,0 +1,2664 @@
+[
+	{
+		"StationID": "0900",
+		"StationName": {
+			"Zh_tw": "基隆",
+			"En": "Keelung"
+		},
+		"StationPosition": {
+			"PositionLon": 121.74013,
+			"PositionLat": 25.13401
+		}
+	},
+	{
+		"StationID": "0910",
+		"StationName": {
+			"Zh_tw": "三坑",
+			"En": "Sankeng"
+		},
+		"StationPosition": {
+			"PositionLon": 121.74202,
+			"PositionLat": 25.12305
+		}
+	},
+	{
+		"StationID": "0920",
+		"StationName": {
+			"Zh_tw": "八堵",
+			"En": "Badu"
+		},
+		"StationPosition": {
+			"PositionLon": 121.72898,
+			"PositionLat": 25.10843
+		}
+	},
+	{
+		"StationID": "0930",
+		"StationName": {
+			"Zh_tw": "七堵",
+			"En": "Qidu"
+		},
+		"StationPosition": {
+			"PositionLon": 121.71415,
+			"PositionLat": 25.09294
+		}
+	},
+	{
+		"StationID": "0940",
+		"StationName": {
+			"Zh_tw": "百福",
+			"En": "Baifu"
+		},
+		"StationPosition": {
+			"PositionLon": 121.69373,
+			"PositionLat": 25.07803
+		}
+	},
+	{
+		"StationID": "0950",
+		"StationName": {
+			"Zh_tw": "五堵",
+			"En": "Wudu"
+		},
+		"StationPosition": {
+			"PositionLon": 121.66764,
+			"PositionLat": 25.07784
+		}
+	},
+	{
+		"StationID": "0960",
+		"StationName": {
+			"Zh_tw": "汐止",
+			"En": "Xizhi"
+		},
+		"StationPosition": {
+			"PositionLon": 121.66244,
+			"PositionLat": 25.06894
+		}
+	},
+	{
+		"StationID": "0970",
+		"StationName": {
+			"Zh_tw": "汐科",
+			"En": "Xike"
+		},
+		"StationPosition": {
+			"PositionLon": 121.64669,
+			"PositionLat": 25.06241
+		}
+	},
+	{
+		"StationID": "0980",
+		"StationName": {
+			"Zh_tw": "南港",
+			"En": "Nangang"
+		},
+		"StationPosition": {
+			"PositionLon": 121.60706,
+			"PositionLat": 25.05348
+		}
+	},
+	{
+		"StationID": "0990",
+		"StationName": {
+			"Zh_tw": "松山",
+			"En": "Songshan"
+		},
+		"StationPosition": {
+			"PositionLon": 121.57807,
+			"PositionLat": 25.04936
+		}
+	},
+	{
+		"StationID": "1000",
+		"StationName": {
+			"Zh_tw": "台北",
+			"En": "Taipei"
+		},
+		"StationPosition": {
+			"PositionLon": 121.51784,
+			"PositionLat": 25.04771
+		}
+	},
+	{
+		"StationID": "1001",
+		"StationName": {
+			"Zh_tw": "台北-環島",
+			"En": "Taipei Surround Island"
+		},
+		"StationPosition": {
+			"PositionLon": 121.51793,
+			"PositionLat": 25.04811
+		}
+	},
+	{
+		"StationID": "1010",
+		"StationName": {
+			"Zh_tw": "萬華",
+			"En": "Wanhua"
+		},
+		"StationPosition": {
+			"PositionLon": 121.49984,
+			"PositionLat": 25.03348
+		}
+	},
+	{
+		"StationID": "1020",
+		"StationName": {
+			"Zh_tw": "板橋",
+			"En": "Banqiao"
+		},
+		"StationPosition": {
+			"PositionLon": 121.46352,
+			"PositionLat": 25.01469
+		}
+	},
+	{
+		"StationID": "1030",
+		"StationName": {
+			"Zh_tw": "浮洲",
+			"En": "Fuzhou"
+		},
+		"StationPosition": {
+			"PositionLon": 121.44477,
+			"PositionLat": 25.00419
+		}
+	},
+	{
+		"StationID": "1040",
+		"StationName": {
+			"Zh_tw": "樹林",
+			"En": "Shulin"
+		},
+		"StationPosition": {
+			"PositionLon": 121.42481,
+			"PositionLat": 24.99121
+		}
+	},
+	{
+		"StationID": "1050",
+		"StationName": {
+			"Zh_tw": "南樹林",
+			"En": "South Shulin"
+		},
+		"StationPosition": {
+			"PositionLon": 121.40891,
+			"PositionLat": 24.98034
+		}
+	},
+	{
+		"StationID": "1060",
+		"StationName": {
+			"Zh_tw": "山佳",
+			"En": "Shanjia"
+		},
+		"StationPosition": {
+			"PositionLon": 121.39273,
+			"PositionLat": 24.97233
+		}
+	},
+	{
+		"StationID": "1070",
+		"StationName": {
+			"Zh_tw": "鶯歌",
+			"En": "Yingge"
+		},
+		"StationPosition": {
+			"PositionLon": 121.35535,
+			"PositionLat": 24.95432
+		}
+	},
+	{
+		"StationID": "1080",
+		"StationName": {
+			"Zh_tw": "桃園",
+			"En": "Taoyuan"
+		},
+		"StationPosition": {
+			"PositionLon": 121.31399,
+			"PositionLat": 24.98941
+		}
+	},
+	{
+		"StationID": "1090",
+		"StationName": {
+			"Zh_tw": "內壢",
+			"En": "Neili"
+		},
+		"StationPosition": {
+			"PositionLon": 121.25814,
+			"PositionLat": 24.97287
+		}
+	},
+	{
+		"StationID": "1100",
+		"StationName": {
+			"Zh_tw": "中壢",
+			"En": "Zhongli_Taoyuan"
+		},
+		"StationPosition": {
+			"PositionLon": 121.22571,
+			"PositionLat": 24.95382
+		}
+	},
+	{
+		"StationID": "1110",
+		"StationName": {
+			"Zh_tw": "埔心",
+			"En": "Puxin"
+		},
+		"StationPosition": {
+			"PositionLon": 121.18366,
+			"PositionLat": 24.91945
+		}
+	},
+	{
+		"StationID": "1120",
+		"StationName": {
+			"Zh_tw": "楊梅",
+			"En": "Yangmei"
+		},
+		"StationPosition": {
+			"PositionLon": 121.14634,
+			"PositionLat": 24.91391
+		}
+	},
+	{
+		"StationID": "1130",
+		"StationName": {
+			"Zh_tw": "富岡",
+			"En": "Fugang"
+		},
+		"StationPosition": {
+			"PositionLon": 121.08313,
+			"PositionLat": 24.93462
+		}
+	},
+	{
+		"StationID": "1140",
+		"StationName": {
+			"Zh_tw": "新富",
+			"En": "Xinfu"
+		},
+		"StationPosition": {
+			"PositionLon": 121.06759,
+			"PositionLat": 24.93107
+		}
+	},
+	{
+		"StationID": "1150",
+		"StationName": {
+			"Zh_tw": "北湖",
+			"En": "Beihu"
+		},
+		"StationPosition": {
+			"PositionLon": 121.05586,
+			"PositionLat": 24.92191
+		}
+	},
+	{
+		"StationID": "1160",
+		"StationName": {
+			"Zh_tw": "湖口",
+			"En": "Hukou"
+		},
+		"StationPosition": {
+			"PositionLon": 121.04412,
+			"PositionLat": 24.90292
+		}
+	},
+	{
+		"StationID": "1170",
+		"StationName": {
+			"Zh_tw": "新豐",
+			"En": "Xinfeng"
+		},
+		"StationPosition": {
+			"PositionLon": 120.99654,
+			"PositionLat": 24.86961
+		}
+	},
+	{
+		"StationID": "1180",
+		"StationName": {
+			"Zh_tw": "竹北",
+			"En": "Zhubei"
+		},
+		"StationPosition": {
+			"PositionLon": 121.00936,
+			"PositionLat": 24.83892
+		}
+	},
+	{
+		"StationID": "1190",
+		"StationName": {
+			"Zh_tw": "北新竹",
+			"En": "North Hsinchu"
+		},
+		"StationPosition": {
+			"PositionLon": 120.98385,
+			"PositionLat": 24.80876
+		}
+	},
+	{
+		"StationID": "1191",
+		"StationName": {
+			"Zh_tw": "千甲",
+			"En": "Qianjia"
+		},
+		"StationPosition": {
+			"PositionLon": 121.00301,
+			"PositionLat": 24.80669
+		}
+	},
+	{
+		"StationID": "1192",
+		"StationName": {
+			"Zh_tw": "新莊",
+			"En": "Xinzhuang"
+		},
+		"StationPosition": {
+			"PositionLon": 121.02182,
+			"PositionLat": 24.78819
+		}
+	},
+	{
+		"StationID": "1193",
+		"StationName": {
+			"Zh_tw": "竹中",
+			"En": "Zhuzhong"
+		},
+		"StationPosition": {
+			"PositionLon": 121.03117,
+			"PositionLat": 24.78125
+		}
+	},
+	{
+		"StationID": "1194",
+		"StationName": {
+			"Zh_tw": "六家",
+			"En": "Liujia"
+		},
+		"StationPosition": {
+			"PositionLon": 121.03921,
+			"PositionLat": 24.80751
+		}
+	},
+	{
+		"StationID": "1201",
+		"StationName": {
+			"Zh_tw": "上員",
+			"En": "Shangyuan"
+		},
+		"StationPosition": {
+			"PositionLon": 121.05554,
+			"PositionLat": 24.77797
+		}
+	},
+	{
+		"StationID": "1202",
+		"StationName": {
+			"Zh_tw": "榮華",
+			"En": "Ronghua"
+		},
+		"StationPosition": {
+			"PositionLon": 121.08296,
+			"PositionLat": 24.74851
+		}
+	},
+	{
+		"StationID": "1203",
+		"StationName": {
+			"Zh_tw": "竹東",
+			"En": "Zhudong"
+		},
+		"StationPosition": {
+			"PositionLon": 121.09465,
+			"PositionLat": 24.73811
+		}
+	},
+	{
+		"StationID": "1204",
+		"StationName": {
+			"Zh_tw": "橫山",
+			"En": "Hengshan"
+		},
+		"StationPosition": {
+			"PositionLon": 121.11657,
+			"PositionLat": 24.72051
+		}
+	},
+	{
+		"StationID": "1205",
+		"StationName": {
+			"Zh_tw": "九讚頭",
+			"En": "Jiuzantou"
+		},
+		"StationPosition": {
+			"PositionLon": 121.13621,
+			"PositionLat": 24.72068
+		}
+	},
+	{
+		"StationID": "1206",
+		"StationName": {
+			"Zh_tw": "合興",
+			"En": "Hexing"
+		},
+		"StationPosition": {
+			"PositionLon": 121.15434,
+			"PositionLat": 24.71649
+		}
+	},
+	{
+		"StationID": "1207",
+		"StationName": {
+			"Zh_tw": "富貴",
+			"En": "Fugui"
+		},
+		"StationPosition": {
+			"PositionLon": 121.16729,
+			"PositionLat": 24.71553
+		}
+	},
+	{
+		"StationID": "1208",
+		"StationName": {
+			"Zh_tw": "內灣",
+			"En": "Neiwan"
+		},
+		"StationPosition": {
+			"PositionLon": 121.18247,
+			"PositionLat": 24.70526
+		}
+	},
+	{
+		"StationID": "1210",
+		"StationName": {
+			"Zh_tw": "新竹",
+			"En": "Hsinchu"
+		},
+		"StationPosition": {
+			"PositionLon": 120.97156,
+			"PositionLat": 24.80169
+		}
+	},
+	{
+		"StationID": "1220",
+		"StationName": {
+			"Zh_tw": "三姓橋",
+			"En": "Sanxingqiao"
+		},
+		"StationPosition": {
+			"PositionLon": 120.92838,
+			"PositionLat": 24.78723
+		}
+	},
+	{
+		"StationID": "1230",
+		"StationName": {
+			"Zh_tw": "香山",
+			"En": "Xiangshan"
+		},
+		"StationPosition": {
+			"PositionLon": 120.91391,
+			"PositionLat": 24.76321
+		}
+	},
+	{
+		"StationID": "1240",
+		"StationName": {
+			"Zh_tw": "崎頂",
+			"En": "Qiding"
+		},
+		"StationPosition": {
+			"PositionLon": 120.87213,
+			"PositionLat": 24.72281
+		}
+	},
+	{
+		"StationID": "1250",
+		"StationName": {
+			"Zh_tw": "竹南",
+			"En": "Zhunan"
+		},
+		"StationPosition": {
+			"PositionLon": 120.88041,
+			"PositionLat": 24.68663
+		}
+	},
+	{
+		"StationID": "2110",
+		"StationName": {
+			"Zh_tw": "談文",
+			"En": "Tanwen"
+		},
+		"StationPosition": {
+			"PositionLon": 120.85825,
+			"PositionLat": 24.65641
+		}
+	},
+	{
+		"StationID": "2120",
+		"StationName": {
+			"Zh_tw": "大山",
+			"En": "Dashan"
+		},
+		"StationPosition": {
+			"PositionLon": 120.80376,
+			"PositionLat": 24.64565
+		}
+	},
+	{
+		"StationID": "2130",
+		"StationName": {
+			"Zh_tw": "後龍",
+			"En": "Houlong"
+		},
+		"StationPosition": {
+			"PositionLon": 120.78731,
+			"PositionLat": 24.61621
+		}
+	},
+	{
+		"StationID": "2140",
+		"StationName": {
+			"Zh_tw": "龍港",
+			"En": "Longgang"
+		},
+		"StationPosition": {
+			"PositionLon": 120.75812,
+			"PositionLat": 24.61169
+		}
+	},
+	{
+		"StationID": "2150",
+		"StationName": {
+			"Zh_tw": "白沙屯",
+			"En": "Baishatun"
+		},
+		"StationPosition": {
+			"PositionLon": 120.70824,
+			"PositionLat": 24.56481
+		}
+	},
+	{
+		"StationID": "2160",
+		"StationName": {
+			"Zh_tw": "新埔",
+			"En": "Xinpu"
+		},
+		"StationPosition": {
+			"PositionLon": 120.69518,
+			"PositionLat": 24.54018
+		}
+	},
+	{
+		"StationID": "2170",
+		"StationName": {
+			"Zh_tw": "通霄",
+			"En": "Tongxiao"
+		},
+		"StationPosition": {
+			"PositionLon": 120.67843,
+			"PositionLat": 24.49141
+		}
+	},
+	{
+		"StationID": "2180",
+		"StationName": {
+			"Zh_tw": "苑裡",
+			"En": "Yuanli"
+		},
+		"StationPosition": {
+			"PositionLon": 120.65146,
+			"PositionLat": 24.44344
+		}
+	},
+	{
+		"StationID": "2190",
+		"StationName": {
+			"Zh_tw": "日南",
+			"En": "Rinan"
+		},
+		"StationPosition": {
+			"PositionLon": 120.65412,
+			"PositionLat": 24.37805
+		}
+	},
+	{
+		"StationID": "2200",
+		"StationName": {
+			"Zh_tw": "大甲",
+			"En": "Dajia"
+		},
+		"StationPosition": {
+			"PositionLon": 120.62702,
+			"PositionLat": 24.34448
+		}
+	},
+	{
+		"StationID": "2210",
+		"StationName": {
+			"Zh_tw": "台中港",
+			"En": "Taichung Port"
+		},
+		"StationPosition": {
+			"PositionLon": 120.60231,
+			"PositionLat": 24.30441
+		}
+	},
+	{
+		"StationID": "2220",
+		"StationName": {
+			"Zh_tw": "清水",
+			"En": "Qingshui"
+		},
+		"StationPosition": {
+			"PositionLon": 120.56918,
+			"PositionLat": 24.26364
+		}
+	},
+	{
+		"StationID": "2230",
+		"StationName": {
+			"Zh_tw": "沙鹿",
+			"En": "Shalu"
+		},
+		"StationPosition": {
+			"PositionLon": 120.55752,
+			"PositionLat": 24.23702
+		}
+	},
+	{
+		"StationID": "2240",
+		"StationName": {
+			"Zh_tw": "龍井",
+			"En": "Longjing"
+		},
+		"StationPosition": {
+			"PositionLon": 120.54336,
+			"PositionLat": 24.19745
+		}
+	},
+	{
+		"StationID": "2250",
+		"StationName": {
+			"Zh_tw": "大肚",
+			"En": "Dadu"
+		},
+		"StationPosition": {
+			"PositionLon": 120.54255,
+			"PositionLat": 24.15401
+		}
+	},
+	{
+		"StationID": "2260",
+		"StationName": {
+			"Zh_tw": "追分",
+			"En": "Zhuifen"
+		},
+		"StationPosition": {
+			"PositionLon": 120.57014,
+			"PositionLat": 24.12061
+		}
+	},
+	{
+		"StationID": "3140",
+		"StationName": {
+			"Zh_tw": "造橋",
+			"En": "Zaoqiao"
+		},
+		"StationPosition": {
+			"PositionLon": 120.86719,
+			"PositionLat": 24.64206
+		}
+	},
+	{
+		"StationID": "3150",
+		"StationName": {
+			"Zh_tw": "豐富",
+			"En": "Fengfu"
+		},
+		"StationPosition": {
+			"PositionLon": 120.82357,
+			"PositionLat": 24.60131
+		}
+	},
+	{
+		"StationID": "3160",
+		"StationName": {
+			"Zh_tw": "苗栗",
+			"En": "Miaoli"
+		},
+		"StationPosition": {
+			"PositionLon": 120.82264,
+			"PositionLat": 24.57002
+		}
+	},
+	{
+		"StationID": "3170",
+		"StationName": {
+			"Zh_tw": "南勢",
+			"En": "Nanshi"
+		},
+		"StationPosition": {
+			"PositionLon": 120.79157,
+			"PositionLat": 24.52234
+		}
+	},
+	{
+		"StationID": "3180",
+		"StationName": {
+			"Zh_tw": "銅鑼",
+			"En": "Tongluo"
+		},
+		"StationPosition": {
+			"PositionLon": 120.78616,
+			"PositionLat": 24.48648
+		}
+	},
+	{
+		"StationID": "3190",
+		"StationName": {
+			"Zh_tw": "三義",
+			"En": "Sanyi"
+		},
+		"StationPosition": {
+			"PositionLon": 120.77393,
+			"PositionLat": 24.42066
+		}
+	},
+	{
+		"StationID": "3210",
+		"StationName": {
+			"Zh_tw": "泰安",
+			"En": "Tai'an"
+		},
+		"StationPosition": {
+			"PositionLon": 120.74181,
+			"PositionLat": 24.33146
+		}
+	},
+	{
+		"StationID": "3220",
+		"StationName": {
+			"Zh_tw": "后里",
+			"En": "Houli"
+		},
+		"StationPosition": {
+			"PositionLon": 120.73288,
+			"PositionLat": 24.30933
+		}
+	},
+	{
+		"StationID": "3230",
+		"StationName": {
+			"Zh_tw": "豐原",
+			"En": "Fengyuan"
+		},
+		"StationPosition": {
+			"PositionLon": 120.72291,
+			"PositionLat": 24.25413
+		}
+	},
+	{
+		"StationID": "3240",
+		"StationName": {
+			"Zh_tw": "栗林",
+			"En": "Lilin"
+		},
+		"StationPosition": {
+			"PositionLon": 120.71069,
+			"PositionLat": 24.23481
+		}
+	},
+	{
+		"StationID": "3250",
+		"StationName": {
+			"Zh_tw": "潭子",
+			"En": "Tanzi"
+		},
+		"StationPosition": {
+			"PositionLon": 120.70557,
+			"PositionLat": 24.21283
+		}
+	},
+	{
+		"StationID": "3260",
+		"StationName": {
+			"Zh_tw": "頭家厝",
+			"En": "Toujiacuo"
+		},
+		"StationPosition": {
+			"PositionLon": 120.70398,
+			"PositionLat": 24.19572
+		}
+	},
+	{
+		"StationID": "3270",
+		"StationName": {
+			"Zh_tw": "松竹",
+			"En": "Songzhu"
+		},
+		"StationPosition": {
+			"PositionLon": 120.70197,
+			"PositionLat": 24.17983
+		}
+	},
+	{
+		"StationID": "3280",
+		"StationName": {
+			"Zh_tw": "太原",
+			"En": "Taiyuan"
+		},
+		"StationPosition": {
+			"PositionLon": 120.69981,
+			"PositionLat": 24.16413
+		}
+	},
+	{
+		"StationID": "3290",
+		"StationName": {
+			"Zh_tw": "精武",
+			"En": "Jingwu"
+		},
+		"StationPosition": {
+			"PositionLon": 120.69773,
+			"PositionLat": 24.14917
+		}
+	},
+	{
+		"StationID": "3300",
+		"StationName": {
+			"Zh_tw": "台中",
+			"En": "Taichung"
+		},
+		"StationPosition": {
+			"PositionLon": 120.68527,
+			"PositionLat": 24.13661
+		}
+	},
+	{
+		"StationID": "3310",
+		"StationName": {
+			"Zh_tw": "五權",
+			"En": "Wuquan"
+		},
+		"StationPosition": {
+			"PositionLon": 120.66644,
+			"PositionLat": 24.12877
+		}
+	},
+	{
+		"StationID": "3320",
+		"StationName": {
+			"Zh_tw": "大慶",
+			"En": "Daqing"
+		},
+		"StationPosition": {
+			"PositionLon": 120.64791,
+			"PositionLat": 24.11891
+		}
+	},
+	{
+		"StationID": "3330",
+		"StationName": {
+			"Zh_tw": "烏日",
+			"En": "Wuri"
+		},
+		"StationPosition": {
+			"PositionLon": 120.62244,
+			"PositionLat": 24.10867
+		}
+	},
+	{
+		"StationID": "3340",
+		"StationName": {
+			"Zh_tw": "新烏日",
+			"En": "Xinwuri"
+		},
+		"StationPosition": {
+			"PositionLon": 120.61429,
+			"PositionLat": 24.10976
+		}
+	},
+	{
+		"StationID": "3350",
+		"StationName": {
+			"Zh_tw": "成功",
+			"En": "Chenggong"
+		},
+		"StationPosition": {
+			"PositionLon": 120.59021,
+			"PositionLat": 24.11424
+		}
+	},
+	{
+		"StationID": "3360",
+		"StationName": {
+			"Zh_tw": "彰化",
+			"En": "Changhua"
+		},
+		"StationPosition": {
+			"PositionLon": 120.53828,
+			"PositionLat": 24.08171
+		}
+	},
+	{
+		"StationID": "3370",
+		"StationName": {
+			"Zh_tw": "花壇",
+			"En": "Huatan"
+		},
+		"StationPosition": {
+			"PositionLon": 120.53759,
+			"PositionLat": 24.02521
+		}
+	},
+	{
+		"StationID": "3380",
+		"StationName": {
+			"Zh_tw": "大村",
+			"En": "Dacun"
+		},
+		"StationPosition": {
+			"PositionLon": 120.56068,
+			"PositionLat": 23.99003
+		}
+	},
+	{
+		"StationID": "3390",
+		"StationName": {
+			"Zh_tw": "員林",
+			"En": "Yuanlin"
+		},
+		"StationPosition": {
+			"PositionLon": 120.56995,
+			"PositionLat": 23.95933
+		}
+	},
+	{
+		"StationID": "3400",
+		"StationName": {
+			"Zh_tw": "永靖",
+			"En": "Yongjing"
+		},
+		"StationPosition": {
+			"PositionLon": 120.57165,
+			"PositionLat": 23.92811
+		}
+	},
+	{
+		"StationID": "3410",
+		"StationName": {
+			"Zh_tw": "社頭",
+			"En": "Shetou"
+		},
+		"StationPosition": {
+			"PositionLon": 120.58082,
+			"PositionLat": 23.89571
+		}
+	},
+	{
+		"StationID": "3420",
+		"StationName": {
+			"Zh_tw": "田中",
+			"En": "Tianzhong"
+		},
+		"StationPosition": {
+			"PositionLon": 120.59121,
+			"PositionLat": 23.85827
+		}
+	},
+	{
+		"StationID": "3430",
+		"StationName": {
+			"Zh_tw": "二水",
+			"En": "Ershui"
+		},
+		"StationPosition": {
+			"PositionLon": 120.61805,
+			"PositionLat": 23.81321
+		}
+	},
+	{
+		"StationID": "3431",
+		"StationName": {
+			"Zh_tw": "源泉",
+			"En": "Yuanquan"
+		},
+		"StationPosition": {
+			"PositionLon": 120.64208,
+			"PositionLat": 23.79846
+		}
+	},
+	{
+		"StationID": "3432",
+		"StationName": {
+			"Zh_tw": "濁水",
+			"En": "Zhuoshui"
+		},
+		"StationPosition": {
+			"PositionLon": 120.70467,
+			"PositionLat": 23.83467
+		}
+	},
+	{
+		"StationID": "3433",
+		"StationName": {
+			"Zh_tw": "龍泉",
+			"En": "Longquan"
+		},
+		"StationPosition": {
+			"PositionLon": 120.74996,
+			"PositionLat": 23.83521
+		}
+	},
+	{
+		"StationID": "3434",
+		"StationName": {
+			"Zh_tw": "集集",
+			"En": "Jiji"
+		},
+		"StationPosition": {
+			"PositionLon": 120.78491,
+			"PositionLat": 23.82653
+		}
+	},
+	{
+		"StationID": "3435",
+		"StationName": {
+			"Zh_tw": "水里",
+			"En": "Shuili"
+		},
+		"StationPosition": {
+			"PositionLon": 120.85333,
+			"PositionLat": 23.81844
+		}
+	},
+	{
+		"StationID": "3436",
+		"StationName": {
+			"Zh_tw": "車埕",
+			"En": "Checheng"
+		},
+		"StationPosition": {
+			"PositionLon": 120.86572,
+			"PositionLat": 23.83263
+		}
+	},
+	{
+		"StationID": "3450",
+		"StationName": {
+			"Zh_tw": "林內",
+			"En": "Linnei"
+		},
+		"StationPosition": {
+			"PositionLon": 120.61499,
+			"PositionLat": 23.75967
+		}
+	},
+	{
+		"StationID": "3460",
+		"StationName": {
+			"Zh_tw": "石榴",
+			"En": "Shiliu"
+		},
+		"StationPosition": {
+			"PositionLon": 120.57998,
+			"PositionLat": 23.73167
+		}
+	},
+	{
+		"StationID": "3470",
+		"StationName": {
+			"Zh_tw": "斗六",
+			"En": "Douliu"
+		},
+		"StationPosition": {
+			"PositionLon": 120.54117,
+			"PositionLat": 23.71157
+		}
+	},
+	{
+		"StationID": "3480",
+		"StationName": {
+			"Zh_tw": "斗南",
+			"En": "Dounan"
+		},
+		"StationPosition": {
+			"PositionLon": 120.48082,
+			"PositionLat": 23.67302
+		}
+	},
+	{
+		"StationID": "3490",
+		"StationName": {
+			"Zh_tw": "石龜",
+			"En": "Shigui"
+		},
+		"StationPosition": {
+			"PositionLon": 120.47106,
+			"PositionLat": 23.63951
+		}
+	},
+	{
+		"StationID": "4050",
+		"StationName": {
+			"Zh_tw": "大林",
+			"En": "Dalin"
+		},
+		"StationPosition": {
+			"PositionLon": 120.45585,
+			"PositionLat": 23.60112
+		}
+	},
+	{
+		"StationID": "4060",
+		"StationName": {
+			"Zh_tw": "民雄",
+			"En": "Minxiong"
+		},
+		"StationPosition": {
+			"PositionLon": 120.43136,
+			"PositionLat": 23.55502
+		}
+	},
+	{
+		"StationID": "4070",
+		"StationName": {
+			"Zh_tw": "嘉北",
+			"En": "Jiabei"
+		},
+		"StationPosition": {
+			"PositionLon": 120.44852,
+			"PositionLat": 23.49985
+		}
+	},
+	{
+		"StationID": "4080",
+		"StationName": {
+			"Zh_tw": "嘉義",
+			"En": "Chiayi"
+		},
+		"StationPosition": {
+			"PositionLon": 120.44124,
+			"PositionLat": 23.47902
+		}
+	},
+	{
+		"StationID": "4090",
+		"StationName": {
+			"Zh_tw": "水上",
+			"En": "Shuishang"
+		},
+		"StationPosition": {
+			"PositionLon": 120.39961,
+			"PositionLat": 23.43389
+		}
+	},
+	{
+		"StationID": "4100",
+		"StationName": {
+			"Zh_tw": "南靖",
+			"En": "Nanjing"
+		},
+		"StationPosition": {
+			"PositionLon": 120.38647,
+			"PositionLat": 23.41346
+		}
+	},
+	{
+		"StationID": "4110",
+		"StationName": {
+			"Zh_tw": "後壁",
+			"En": "Houbi"
+		},
+		"StationPosition": {
+			"PositionLon": 120.36058,
+			"PositionLat": 23.36626
+		}
+	},
+	{
+		"StationID": "4120",
+		"StationName": {
+			"Zh_tw": "新營",
+			"En": "Xinying"
+		},
+		"StationPosition": {
+			"PositionLon": 120.32344,
+			"PositionLat": 23.30658
+		}
+	},
+	{
+		"StationID": "4130",
+		"StationName": {
+			"Zh_tw": "柳營",
+			"En": "Liuying"
+		},
+		"StationPosition": {
+			"PositionLon": 120.32252,
+			"PositionLat": 23.27762
+		}
+	},
+	{
+		"StationID": "4140",
+		"StationName": {
+			"Zh_tw": "林鳳營",
+			"En": "Linfengying"
+		},
+		"StationPosition": {
+			"PositionLon": 120.32107,
+			"PositionLat": 23.24259
+		}
+	},
+	{
+		"StationID": "4150",
+		"StationName": {
+			"Zh_tw": "隆田",
+			"En": "Longtian"
+		},
+		"StationPosition": {
+			"PositionLon": 120.31917,
+			"PositionLat": 23.19271
+		}
+	},
+	{
+		"StationID": "4160",
+		"StationName": {
+			"Zh_tw": "拔林",
+			"En": "Balin"
+		},
+		"StationPosition": {
+			"PositionLon": 120.32117,
+			"PositionLat": 23.17287
+		}
+	},
+	{
+		"StationID": "4170",
+		"StationName": {
+			"Zh_tw": "善化",
+			"En": "Shanhua"
+		},
+		"StationPosition": {
+			"PositionLon": 120.30653,
+			"PositionLat": 23.13333
+		}
+	},
+	{
+		"StationID": "4180",
+		"StationName": {
+			"Zh_tw": "南科",
+			"En": "Nanke"
+		},
+		"StationPosition": {
+			"PositionLon": 120.30175,
+			"PositionLat": 23.10714
+		}
+	},
+	{
+		"StationID": "4190",
+		"StationName": {
+			"Zh_tw": "新市",
+			"En": "Xinshi"
+		},
+		"StationPosition": {
+			"PositionLon": 120.29004,
+			"PositionLat": 23.06816
+		}
+	},
+	{
+		"StationID": "4200",
+		"StationName": {
+			"Zh_tw": "永康",
+			"En": "Yongkang"
+		},
+		"StationPosition": {
+			"PositionLon": 120.25374,
+			"PositionLat": 23.03873
+		}
+	},
+	{
+		"StationID": "4210",
+		"StationName": {
+			"Zh_tw": "大橋",
+			"En": "Daqiao"
+		},
+		"StationPosition": {
+			"PositionLon": 120.22449,
+			"PositionLat": 23.01951
+		}
+	},
+	{
+		"StationID": "4220",
+		"StationName": {
+			"Zh_tw": "台南",
+			"En": "Tainan"
+		},
+		"StationPosition": {
+			"PositionLon": 120.21231,
+			"PositionLat": 22.99719
+		}
+	},
+	{
+		"StationID": "4250",
+		"StationName": {
+			"Zh_tw": "保安",
+			"En": "Bao'an"
+		},
+		"StationPosition": {
+			"PositionLon": 120.23143,
+			"PositionLat": 22.93289
+		}
+	},
+	{
+		"StationID": "4260",
+		"StationName": {
+			"Zh_tw": "仁德",
+			"En": "Rende"
+		},
+		"StationPosition": {
+			"PositionLon": 120.24061,
+			"PositionLat": 22.92364
+		}
+	},
+	{
+		"StationID": "4270",
+		"StationName": {
+			"Zh_tw": "中洲",
+			"En": "Zhongzhou"
+		},
+		"StationPosition": {
+			"PositionLon": 120.25286,
+			"PositionLat": 22.90466
+		}
+	},
+	{
+		"StationID": "4271",
+		"StationName": {
+			"Zh_tw": "長榮大學",
+			"En": "Chang Jung Christian University"
+		},
+		"StationPosition": {
+			"PositionLon": 120.27274,
+			"PositionLat": 22.90735
+		}
+	},
+	{
+		"StationID": "4272",
+		"StationName": {
+			"Zh_tw": "沙崙",
+			"En": "Shalun"
+		},
+		"StationPosition": {
+			"PositionLon": 120.28635,
+			"PositionLat": 22.92419
+		}
+	},
+	{
+		"StationID": "4290",
+		"StationName": {
+			"Zh_tw": "大湖",
+			"En": "Dahu"
+		},
+		"StationPosition": {
+			"PositionLon": 120.25384,
+			"PositionLat": 22.87821
+		}
+	},
+	{
+		"StationID": "4300",
+		"StationName": {
+			"Zh_tw": "路竹",
+			"En": "Luzhu"
+		},
+		"StationPosition": {
+			"PositionLon": 120.26619,
+			"PositionLat": 22.85404
+		}
+	},
+	{
+		"StationID": "4310",
+		"StationName": {
+			"Zh_tw": "岡山",
+			"En": "Gangshan"
+		},
+		"StationPosition": {
+			"PositionLon": 120.30008,
+			"PositionLat": 22.79251
+		}
+	},
+	{
+		"StationID": "4320",
+		"StationName": {
+			"Zh_tw": "橋頭",
+			"En": "Qiaotou"
+		},
+		"StationPosition": {
+			"PositionLon": 120.31043,
+			"PositionLat": 22.76113
+		}
+	},
+	{
+		"StationID": "4330",
+		"StationName": {
+			"Zh_tw": "楠梓",
+			"En": "Nanzi"
+		},
+		"StationPosition": {
+			"PositionLon": 120.32453,
+			"PositionLat": 22.72717
+		}
+	},
+	{
+		"StationID": "4340",
+		"StationName": {
+			"Zh_tw": "新左營",
+			"En": "Xinzuoying"
+		},
+		"StationPosition": {
+			"PositionLon": 120.30721,
+			"PositionLat": 22.68721
+		}
+	},
+	{
+		"StationID": "4350",
+		"StationName": {
+			"Zh_tw": "左營",
+			"En": "Zuoying"
+		},
+		"StationPosition": {
+			"PositionLon": 120.29441,
+			"PositionLat": 22.67441
+		}
+	},
+	{
+		"StationID": "4360",
+		"StationName": {
+			"Zh_tw": "內惟",
+			"En": "Neiwei"
+		},
+		"StationPosition": {
+			"PositionLon": 120.28691,
+			"PositionLat": 22.66611
+		}
+	},
+	{
+		"StationID": "4370",
+		"StationName": {
+			"Zh_tw": "美術館",
+			"En": "Museum of Fine Arts"
+		},
+		"StationPosition": {
+			"PositionLon": 120.28163,
+			"PositionLat": 22.65298
+		}
+	},
+	{
+		"StationID": "4380",
+		"StationName": {
+			"Zh_tw": "鼓山",
+			"En": "Gushan"
+		},
+		"StationPosition": {
+			"PositionLon": 120.28071,
+			"PositionLat": 22.64169
+		}
+	},
+	{
+		"StationID": "4390",
+		"StationName": {
+			"Zh_tw": "三塊厝",
+			"En": "Sankuaicuo"
+		},
+		"StationPosition": {
+			"PositionLon": 120.29381,
+			"PositionLat": 22.63901
+		}
+	},
+	{
+		"StationID": "4400",
+		"StationName": {
+			"Zh_tw": "高雄",
+			"En": "Kaohsiung"
+		},
+		"StationPosition": {
+			"PositionLon": 120.30313,
+			"PositionLat": 22.63801
+		}
+	},
+	{
+		"StationID": "4410",
+		"StationName": {
+			"Zh_tw": "民族",
+			"En": "Minzu"
+		},
+		"StationPosition": {
+			"PositionLon": 120.31479,
+			"PositionLat": 22.63881
+		}
+	},
+	{
+		"StationID": "4420",
+		"StationName": {
+			"Zh_tw": "科工館",
+			"En": "Science And Technology Museum"
+		},
+		"StationPosition": {
+			"PositionLon": 120.32663,
+			"PositionLat": 22.63702
+		}
+	},
+	{
+		"StationID": "4430",
+		"StationName": {
+			"Zh_tw": "正義",
+			"En": "Zhengyi"
+		},
+		"StationPosition": {
+			"PositionLon": 120.34245,
+			"PositionLat": 22.63425
+		}
+	},
+	{
+		"StationID": "4440",
+		"StationName": {
+			"Zh_tw": "鳳山",
+			"En": "Fongshan"
+		},
+		"StationPosition": {
+			"PositionLon": 120.35746,
+			"PositionLat": 22.63131
+		}
+	},
+	{
+		"StationID": "4450",
+		"StationName": {
+			"Zh_tw": "後庄",
+			"En": "Houzhuang"
+		},
+		"StationPosition": {
+			"PositionLon": 120.39132,
+			"PositionLat": 22.64013
+		}
+	},
+	{
+		"StationID": "4460",
+		"StationName": {
+			"Zh_tw": "九曲堂",
+			"En": "Jiuqutang"
+		},
+		"StationPosition": {
+			"PositionLon": 120.42072,
+			"PositionLat": 22.65658
+		}
+	},
+	{
+		"StationID": "4470",
+		"StationName": {
+			"Zh_tw": "六塊厝",
+			"En": "Liukuaicuo"
+		},
+		"StationPosition": {
+			"PositionLon": 120.46491,
+			"PositionLat": 22.66619
+		}
+	},
+	{
+		"StationID": "5000",
+		"StationName": {
+			"Zh_tw": "屏東",
+			"En": "Pingtung"
+		},
+		"StationPosition": {
+			"PositionLon": 120.48627,
+			"PositionLat": 22.66961
+		}
+	},
+	{
+		"StationID": "5010",
+		"StationName": {
+			"Zh_tw": "歸來",
+			"En": "Guilai"
+		},
+		"StationPosition": {
+			"PositionLon": 120.50294,
+			"PositionLat": 22.65214
+		}
+	},
+	{
+		"StationID": "5020",
+		"StationName": {
+			"Zh_tw": "麟洛",
+			"En": "Linluo"
+		},
+		"StationPosition": {
+			"PositionLon": 120.51446,
+			"PositionLat": 22.63478
+		}
+	},
+	{
+		"StationID": "5030",
+		"StationName": {
+			"Zh_tw": "西勢",
+			"En": "Xishi"
+		},
+		"StationPosition": {
+			"PositionLon": 120.52677,
+			"PositionLat": 22.61661
+		}
+	},
+	{
+		"StationID": "5040",
+		"StationName": {
+			"Zh_tw": "竹田",
+			"En": "Zhutian"
+		},
+		"StationPosition": {
+			"PositionLon": 120.54009,
+			"PositionLat": 22.58648
+		}
+	},
+	{
+		"StationID": "5050",
+		"StationName": {
+			"Zh_tw": "潮州",
+			"En": "Chaozhou"
+		},
+		"StationPosition": {
+			"PositionLon": 120.53662,
+			"PositionLat": 22.55007
+		}
+	},
+	{
+		"StationID": "5060",
+		"StationName": {
+			"Zh_tw": "崁頂",
+			"En": "Kanding"
+		},
+		"StationPosition": {
+			"PositionLon": 120.51481,
+			"PositionLat": 22.51311
+		}
+	},
+	{
+		"StationID": "5070",
+		"StationName": {
+			"Zh_tw": "南州",
+			"En": "Nanzhou"
+		},
+		"StationPosition": {
+			"PositionLon": 120.51159,
+			"PositionLat": 22.49203
+		}
+	},
+	{
+		"StationID": "5080",
+		"StationName": {
+			"Zh_tw": "鎮安",
+			"En": "Zhen'an"
+		},
+		"StationPosition": {
+			"PositionLon": 120.51151,
+			"PositionLat": 22.45794
+		}
+	},
+	{
+		"StationID": "5090",
+		"StationName": {
+			"Zh_tw": "林邊",
+			"En": "Linbian"
+		},
+		"StationPosition": {
+			"PositionLon": 120.51538,
+			"PositionLat": 22.43141
+		}
+	},
+	{
+		"StationID": "5100",
+		"StationName": {
+			"Zh_tw": "佳冬",
+			"En": "Jiadong"
+		},
+		"StationPosition": {
+			"PositionLon": 120.54782,
+			"PositionLat": 22.41416
+		}
+	},
+	{
+		"StationID": "5110",
+		"StationName": {
+			"Zh_tw": "東海",
+			"En": "Donghai"
+		},
+		"StationPosition": {
+			"PositionLon": 120.57252,
+			"PositionLat": 22.39903
+		}
+	},
+	{
+		"StationID": "5120",
+		"StationName": {
+			"Zh_tw": "枋寮",
+			"En": "Fangliao"
+		},
+		"StationPosition": {
+			"PositionLon": 120.59501,
+			"PositionLat": 22.36786
+		}
+	},
+	{
+		"StationID": "5130",
+		"StationName": {
+			"Zh_tw": "加祿",
+			"En": "Jialu"
+		},
+		"StationPosition": {
+			"PositionLon": 120.62445,
+			"PositionLat": 22.33085
+		}
+	},
+	{
+		"StationID": "5140",
+		"StationName": {
+			"Zh_tw": "內獅",
+			"En": "Neishi"
+		},
+		"StationPosition": {
+			"PositionLon": 120.64322,
+			"PositionLat": 22.30615
+		}
+	},
+	{
+		"StationID": "5160",
+		"StationName": {
+			"Zh_tw": "枋山",
+			"En": "Fangshan"
+		},
+		"StationPosition": {
+			"PositionLon": 120.65968,
+			"PositionLat": 22.26677
+		}
+	},
+	{
+		"StationID": "5170",
+		"StationName": {
+			"Zh_tw": "枋野",
+			"En": "Fangye"
+		},
+		"StationPosition": {
+			"PositionLon": 120.71709,
+			"PositionLat": 22.28091
+		}
+	},
+	{
+		"StationID": "5190",
+		"StationName": {
+			"Zh_tw": "大武",
+			"En": "Dawu"
+		},
+		"StationPosition": {
+			"PositionLon": 120.90091,
+			"PositionLat": 22.36537
+		}
+	},
+	{
+		"StationID": "5200",
+		"StationName": {
+			"Zh_tw": "瀧溪",
+			"En": "Longxi"
+		},
+		"StationPosition": {
+			"PositionLon": 120.94188,
+			"PositionLat": 22.46072
+		}
+	},
+	{
+		"StationID": "5210",
+		"StationName": {
+			"Zh_tw": "金崙",
+			"En": "Jinlun"
+		},
+		"StationPosition": {
+			"PositionLon": 120.96721,
+			"PositionLat": 22.53161
+		}
+	},
+	{
+		"StationID": "5220",
+		"StationName": {
+			"Zh_tw": "太麻里",
+			"En": "Taimali"
+		},
+		"StationPosition": {
+			"PositionLon": 121.00505,
+			"PositionLat": 22.61879
+		}
+	},
+	{
+		"StationID": "5230",
+		"StationName": {
+			"Zh_tw": "知本",
+			"En": "Zhiben"
+		},
+		"StationPosition": {
+			"PositionLon": 121.06128,
+			"PositionLat": 22.71008
+		}
+	},
+	{
+		"StationID": "5240",
+		"StationName": {
+			"Zh_tw": "康樂",
+			"En": "Kangle"
+		},
+		"StationPosition": {
+			"PositionLon": 121.09338,
+			"PositionLat": 22.76406
+		}
+	},
+	{
+		"StationID": "5999",
+		"StationName": {
+			"Zh_tw": "潮州基地",
+			"En": "Chaozhou Railway Workshop"
+		},
+		"StationPosition": {
+			"PositionLon": 120.52642,
+			"PositionLat": 22.52231
+		}
+	},
+	{
+		"StationID": "6000",
+		"StationName": {
+			"Zh_tw": "台東",
+			"En": "Taitung"
+		},
+		"StationPosition": {
+			"PositionLon": 121.12326,
+			"PositionLat": 22.79375
+		}
+	},
+	{
+		"StationID": "6010",
+		"StationName": {
+			"Zh_tw": "山里",
+			"En": "Shanli"
+		},
+		"StationPosition": {
+			"PositionLon": 121.13778,
+			"PositionLat": 22.86194
+		}
+	},
+	{
+		"StationID": "6020",
+		"StationName": {
+			"Zh_tw": "鹿野",
+			"En": "Luye"
+		},
+		"StationPosition": {
+			"PositionLon": 121.13696,
+			"PositionLat": 22.91251
+		}
+	},
+	{
+		"StationID": "6030",
+		"StationName": {
+			"Zh_tw": "瑞源",
+			"En": "Ruiyuan"
+		},
+		"StationPosition": {
+			"PositionLon": 121.15902,
+			"PositionLat": 22.95613
+		}
+	},
+	{
+		"StationID": "6040",
+		"StationName": {
+			"Zh_tw": "瑞和",
+			"En": "Ruihe"
+		},
+		"StationPosition": {
+			"PositionLon": 121.15573,
+			"PositionLat": 22.98001
+		}
+	},
+	{
+		"StationID": "6050",
+		"StationName": {
+			"Zh_tw": "關山",
+			"En": "Guanshan"
+		},
+		"StationPosition": {
+			"PositionLon": 121.16441,
+			"PositionLat": 23.04564
+		}
+	},
+	{
+		"StationID": "6060",
+		"StationName": {
+			"Zh_tw": "海端",
+			"En": "Haiduan"
+		},
+		"StationPosition": {
+			"PositionLon": 121.17695,
+			"PositionLat": 23.10257
+		}
+	},
+	{
+		"StationID": "6070",
+		"StationName": {
+			"Zh_tw": "池上",
+			"En": "Chishang"
+		},
+		"StationPosition": {
+			"PositionLon": 121.21945,
+			"PositionLat": 23.12628
+		}
+	},
+	{
+		"StationID": "6080",
+		"StationName": {
+			"Zh_tw": "富里",
+			"En": "Fuli"
+		},
+		"StationPosition": {
+			"PositionLon": 121.24864,
+			"PositionLat": 23.17935
+		}
+	},
+	{
+		"StationID": "6090",
+		"StationName": {
+			"Zh_tw": "東竹",
+			"En": "Dongzhu"
+		},
+		"StationPosition": {
+			"PositionLon": 121.27844,
+			"PositionLat": 23.22612
+		}
+	},
+	{
+		"StationID": "6100",
+		"StationName": {
+			"Zh_tw": "東里",
+			"En": "Dongli"
+		},
+		"StationPosition": {
+			"PositionLon": 121.30575,
+			"PositionLat": 23.27127
+		}
+	},
+	{
+		"StationID": "6110",
+		"StationName": {
+			"Zh_tw": "玉里",
+			"En": "Yuli"
+		},
+		"StationPosition": {
+			"PositionLon": 121.31181,
+			"PositionLat": 23.33161
+		}
+	},
+	{
+		"StationID": "6120",
+		"StationName": {
+			"Zh_tw": "三民",
+			"En": "Sanmin"
+		},
+		"StationPosition": {
+			"PositionLon": 121.34561,
+			"PositionLat": 23.42463
+		}
+	},
+	{
+		"StationID": "6130",
+		"StationName": {
+			"Zh_tw": "瑞穗",
+			"En": "Ruisui"
+		},
+		"StationPosition": {
+			"PositionLon": 121.37689,
+			"PositionLat": 23.49739
+		}
+	},
+	{
+		"StationID": "6140",
+		"StationName": {
+			"Zh_tw": "富源",
+			"En": "Fuyuan"
+		},
+		"StationPosition": {
+			"PositionLon": 121.38003,
+			"PositionLat": 23.58028
+		}
+	},
+	{
+		"StationID": "6150",
+		"StationName": {
+			"Zh_tw": "大富",
+			"En": "Dafu"
+		},
+		"StationPosition": {
+			"PositionLon": 121.38969,
+			"PositionLat": 23.60572
+		}
+	},
+	{
+		"StationID": "6160",
+		"StationName": {
+			"Zh_tw": "光復",
+			"En": "Guangfu"
+		},
+		"StationPosition": {
+			"PositionLon": 121.42125,
+			"PositionLat": 23.66633
+		}
+	},
+	{
+		"StationID": "6170",
+		"StationName": {
+			"Zh_tw": "萬榮",
+			"En": "Wanrong"
+		},
+		"StationPosition": {
+			"PositionLon": 121.41907,
+			"PositionLat": 23.71199
+		}
+	},
+	{
+		"StationID": "6180",
+		"StationName": {
+			"Zh_tw": "鳳林",
+			"En": "Fenglin"
+		},
+		"StationPosition": {
+			"PositionLon": 121.44708,
+			"PositionLat": 23.74625
+		}
+	},
+	{
+		"StationID": "6190",
+		"StationName": {
+			"Zh_tw": "南平",
+			"En": "Nanping"
+		},
+		"StationPosition": {
+			"PositionLon": 121.45833,
+			"PositionLat": 23.78228
+		}
+	},
+	{
+		"StationID": "6200",
+		"StationName": {
+			"Zh_tw": "林榮新光",
+			"En": "Linrong Shin Kong"
+		},
+		"StationPosition": {
+			"PositionLon": 121.46166,
+			"PositionLat": 23.80167
+		}
+	},
+	{
+		"StationID": "6210",
+		"StationName": {
+			"Zh_tw": "豐田",
+			"En": "Fengtian"
+		},
+		"StationPosition": {
+			"PositionLon": 121.49619,
+			"PositionLat": 23.84836
+		}
+	},
+	{
+		"StationID": "6220",
+		"StationName": {
+			"Zh_tw": "壽豐",
+			"En": "Shoufeng"
+		},
+		"StationPosition": {
+			"PositionLon": 121.51064,
+			"PositionLat": 23.86901
+		}
+	},
+	{
+		"StationID": "6230",
+		"StationName": {
+			"Zh_tw": "平和",
+			"En": "Pinghe"
+		},
+		"StationPosition": {
+			"PositionLon": 121.52036,
+			"PositionLat": 23.88275
+		}
+	},
+	{
+		"StationID": "6240",
+		"StationName": {
+			"Zh_tw": "志學",
+			"En": "Zhixue"
+		},
+		"StationPosition": {
+			"PositionLon": 121.52947,
+			"PositionLat": 23.90751
+		}
+	},
+	{
+		"StationID": "6250",
+		"StationName": {
+			"Zh_tw": "吉安",
+			"En": "Ji'an"
+		},
+		"StationPosition": {
+			"PositionLon": 121.58261,
+			"PositionLat": 23.96825
+		}
+	},
+	{
+		"StationID": "7000",
+		"StationName": {
+			"Zh_tw": "花蓮",
+			"En": "Hualien"
+		},
+		"StationPosition": {
+			"PositionLon": 121.60158,
+			"PositionLat": 23.99264
+		}
+	},
+	{
+		"StationID": "7010",
+		"StationName": {
+			"Zh_tw": "北埔",
+			"En": "Beipu"
+		},
+		"StationPosition": {
+			"PositionLon": 121.60189,
+			"PositionLat": 24.03251
+		}
+	},
+	{
+		"StationID": "7020",
+		"StationName": {
+			"Zh_tw": "景美",
+			"En": "Jingmei"
+		},
+		"StationPosition": {
+			"PositionLon": 121.61103,
+			"PositionLat": 24.09039
+		}
+	},
+	{
+		"StationID": "7030",
+		"StationName": {
+			"Zh_tw": "新城",
+			"En": "Xincheng"
+		},
+		"StationPosition": {
+			"PositionLon": 121.64103,
+			"PositionLat": 24.12761
+		}
+	},
+	{
+		"StationID": "7040",
+		"StationName": {
+			"Zh_tw": "崇德",
+			"En": "Chongde"
+		},
+		"StationPosition": {
+			"PositionLon": 121.65555,
+			"PositionLat": 24.17111
+		}
+	},
+	{
+		"StationID": "7050",
+		"StationName": {
+			"Zh_tw": "和仁",
+			"En": "Heren"
+		},
+		"StationPosition": {
+			"PositionLon": 121.71192,
+			"PositionLat": 24.24219
+		}
+	},
+	{
+		"StationID": "7060",
+		"StationName": {
+			"Zh_tw": "和平",
+			"En": "Heping"
+		},
+		"StationPosition": {
+			"PositionLon": 121.75322,
+			"PositionLat": 24.29825
+		}
+	},
+	{
+		"StationID": "7070",
+		"StationName": {
+			"Zh_tw": "漢本",
+			"En": "Hanben"
+		},
+		"StationPosition": {
+			"PositionLon": 121.76878,
+			"PositionLat": 24.33561
+		}
+	},
+	{
+		"StationID": "7080",
+		"StationName": {
+			"Zh_tw": "武塔",
+			"En": "Wuta"
+		},
+		"StationPosition": {
+			"PositionLon": 121.77601,
+			"PositionLat": 24.44879
+		}
+	},
+	{
+		"StationID": "7090",
+		"StationName": {
+			"Zh_tw": "南澳",
+			"En": "Nan'ao"
+		},
+		"StationPosition": {
+			"PositionLon": 121.80103,
+			"PositionLat": 24.46342
+		}
+	},
+	{
+		"StationID": "7100",
+		"StationName": {
+			"Zh_tw": "東澳",
+			"En": "Dong'ao"
+		},
+		"StationPosition": {
+			"PositionLon": 121.83071,
+			"PositionLat": 24.51828
+		}
+	},
+	{
+		"StationID": "7110",
+		"StationName": {
+			"Zh_tw": "永樂",
+			"En": "Yongle"
+		},
+		"StationPosition": {
+			"PositionLon": 121.84458,
+			"PositionLat": 24.56843
+		}
+	},
+	{
+		"StationID": "7120",
+		"StationName": {
+			"Zh_tw": "蘇澳",
+			"En": "Su'ao"
+		},
+		"StationPosition": {
+			"PositionLon": 121.85144,
+			"PositionLat": 24.59521
+		}
+	},
+	{
+		"StationID": "7130",
+		"StationName": {
+			"Zh_tw": "蘇澳新",
+			"En": "Su'aoxin"
+		},
+		"StationPosition": {
+			"PositionLon": 121.82719,
+			"PositionLat": 24.60852
+		}
+	},
+	{
+		"StationID": "7140",
+		"StationName": {
+			"Zh_tw": "新馬",
+			"En": "Xinma"
+		},
+		"StationPosition": {
+			"PositionLon": 121.82292,
+			"PositionLat": 24.61535
+		}
+	},
+	{
+		"StationID": "7150",
+		"StationName": {
+			"Zh_tw": "冬山",
+			"En": "Dongshan"
+		},
+		"StationPosition": {
+			"PositionLon": 121.79212,
+			"PositionLat": 24.63627
+		}
+	},
+	{
+		"StationID": "7160",
+		"StationName": {
+			"Zh_tw": "羅東",
+			"En": "Luodong"
+		},
+		"StationPosition": {
+			"PositionLon": 121.77424,
+			"PositionLat": 24.67795
+		}
+	},
+	{
+		"StationID": "7170",
+		"StationName": {
+			"Zh_tw": "中里",
+			"En": "Zhongli_Yilan"
+		},
+		"StationPosition": {
+			"PositionLon": 121.77526,
+			"PositionLat": 24.69415
+		}
+	},
+	{
+		"StationID": "7180",
+		"StationName": {
+			"Zh_tw": "二結",
+			"En": "Erjie"
+		},
+		"StationPosition": {
+			"PositionLon": 121.77411,
+			"PositionLat": 24.70529
+		}
+	},
+	{
+		"StationID": "7190",
+		"StationName": {
+			"Zh_tw": "宜蘭",
+			"En": "Yilan"
+		},
+		"StationPosition": {
+			"PositionLon": 121.75791,
+			"PositionLat": 24.75462
+		}
+	},
+	{
+		"StationID": "7200",
+		"StationName": {
+			"Zh_tw": "四城",
+			"En": "Sicheng"
+		},
+		"StationPosition": {
+			"PositionLon": 121.76268,
+			"PositionLat": 24.78684
+		}
+	},
+	{
+		"StationID": "7210",
+		"StationName": {
+			"Zh_tw": "礁溪",
+			"En": "Jiaoxi"
+		},
+		"StationPosition": {
+			"PositionLon": 121.77523,
+			"PositionLat": 24.82705
+		}
+	},
+	{
+		"StationID": "7220",
+		"StationName": {
+			"Zh_tw": "頂埔",
+			"En": "Dingpu"
+		},
+		"StationPosition": {
+			"PositionLon": 121.80918,
+			"PositionLat": 24.84383
+		}
+	},
+	{
+		"StationID": "7230",
+		"StationName": {
+			"Zh_tw": "頭城",
+			"En": "Toucheng"
+		},
+		"StationPosition": {
+			"PositionLon": 121.82253,
+			"PositionLat": 24.85898
+		}
+	},
+	{
+		"StationID": "7240",
+		"StationName": {
+			"Zh_tw": "外澳",
+			"En": "Wai'ao"
+		},
+		"StationPosition": {
+			"PositionLon": 121.84576,
+			"PositionLat": 24.88371
+		}
+	},
+	{
+		"StationID": "7250",
+		"StationName": {
+			"Zh_tw": "龜山",
+			"En": "Guishan"
+		},
+		"StationPosition": {
+			"PositionLon": 121.86886,
+			"PositionLat": 24.90481
+		}
+	},
+	{
+		"StationID": "7260",
+		"StationName": {
+			"Zh_tw": "大溪",
+			"En": "Daxi"
+		},
+		"StationPosition": {
+			"PositionLon": 121.88983,
+			"PositionLat": 24.93836
+		}
+	},
+	{
+		"StationID": "7270",
+		"StationName": {
+			"Zh_tw": "大里",
+			"En": "Dali"
+		},
+		"StationPosition": {
+			"PositionLon": 121.92257,
+			"PositionLat": 24.96688
+		}
+	},
+	{
+		"StationID": "7280",
+		"StationName": {
+			"Zh_tw": "石城",
+			"En": "Shicheng"
+		},
+		"StationPosition": {
+			"PositionLon": 121.94546,
+			"PositionLat": 24.97837
+		}
+	},
+	{
+		"StationID": "7290",
+		"StationName": {
+			"Zh_tw": "福隆",
+			"En": "Fulong"
+		},
+		"StationPosition": {
+			"PositionLon": 121.94471,
+			"PositionLat": 25.01598
+		}
+	},
+	{
+		"StationID": "7300",
+		"StationName": {
+			"Zh_tw": "貢寮",
+			"En": "Gongliao"
+		},
+		"StationPosition": {
+			"PositionLon": 121.90649,
+			"PositionLat": 25.02205
+		}
+	},
+	{
+		"StationID": "7310",
+		"StationName": {
+			"Zh_tw": "雙溪",
+			"En": "Shuangxi"
+		},
+		"StationPosition": {
+			"PositionLon": 121.86415,
+			"PositionLat": 25.03861
+		}
+	},
+	{
+		"StationID": "7320",
+		"StationName": {
+			"Zh_tw": "牡丹",
+			"En": "Mudan"
+		},
+		"StationPosition": {
+			"PositionLon": 121.84974,
+			"PositionLat": 25.05877
+		}
+	},
+	{
+		"StationID": "7330",
+		"StationName": {
+			"Zh_tw": "三貂嶺",
+			"En": "Sandiaoling"
+		},
+		"StationPosition": {
+			"PositionLon": 121.82259,
+			"PositionLat": 25.06555
+		}
+	},
+	{
+		"StationID": "7331",
+		"StationName": {
+			"Zh_tw": "大華",
+			"En": "Dahua"
+		},
+		"StationPosition": {
+			"PositionLon": 121.79751,
+			"PositionLat": 25.04993
+		}
+	},
+	{
+		"StationID": "7332",
+		"StationName": {
+			"Zh_tw": "十分",
+			"En": "Shifen"
+		},
+		"StationPosition": {
+			"PositionLon": 121.77514,
+			"PositionLat": 25.04111
+		}
+	},
+	{
+		"StationID": "7333",
+		"StationName": {
+			"Zh_tw": "望古",
+			"En": "Wanggu"
+		},
+		"StationPosition": {
+			"PositionLon": 121.76349,
+			"PositionLat": 25.03445
+		}
+	},
+	{
+		"StationID": "7334",
+		"StationName": {
+			"Zh_tw": "嶺腳",
+			"En": "Lingjiao"
+		},
+		"StationPosition": {
+			"PositionLon": 121.74784,
+			"PositionLat": 25.03021
+		}
+	},
+	{
+		"StationID": "7335",
+		"StationName": {
+			"Zh_tw": "平溪",
+			"En": "Pingxi"
+		},
+		"StationPosition": {
+			"PositionLon": 121.73994,
+			"PositionLat": 25.02552
+		}
+	},
+	{
+		"StationID": "7336",
+		"StationName": {
+			"Zh_tw": "菁桐",
+			"En": "Jingtong"
+		},
+		"StationPosition": {
+			"PositionLon": 121.72394,
+			"PositionLat": 25.02384
+		}
+	},
+	{
+		"StationID": "7350",
+		"StationName": {
+			"Zh_tw": "猴硐",
+			"En": "Houtong"
+		},
+		"StationPosition": {
+			"PositionLon": 121.82741,
+			"PositionLat": 25.08711
+		}
+	},
+	{
+		"StationID": "7360",
+		"StationName": {
+			"Zh_tw": "瑞芳",
+			"En": "Ruifang"
+		},
+		"StationPosition": {
+			"PositionLon": 121.80596,
+			"PositionLat": 25.10861
+		}
+	},
+	{
+		"StationID": "7361",
+		"StationName": {
+			"Zh_tw": "海科館",
+			"En": "Haikeguan"
+		},
+		"StationPosition": {
+			"PositionLon": 121.80003,
+			"PositionLat": 25.13768
+		}
+	},
+	{
+		"StationID": "7362",
+		"StationName": {
+			"Zh_tw": "八斗子",
+			"En": "Badouzi"
+		},
+		"StationPosition": {
+			"PositionLon": 121.80411,
+			"PositionLat": 25.13481
+		}
+	},
+	{
+		"StationID": "7380",
+		"StationName": {
+			"Zh_tw": "四腳亭",
+			"En": "Sijiaoting"
+		},
+		"StationPosition": {
+			"PositionLon": 121.76192,
+			"PositionLat": 25.10281
+		}
+	},
+	{
+		"StationID": "7390",
+		"StationName": {
+			"Zh_tw": "暖暖",
+			"En": "Nuannuan"
+		},
+		"StationPosition": {
+			"PositionLon": 121.74048,
+			"PositionLat": 25.10224
+		}
+	}
+]

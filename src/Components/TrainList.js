@@ -9,19 +9,26 @@ import {
 	TableRow,
 } from "@material-ui/core";
 import axios from "axios";
-import request from "../requests";
+import { trainAPI } from "../requests";
 import getAuthorizationHeader from "../apiKey";
 
-function TrainList({ searchInfo }) {
+function TrainList({ originStation, destination, date }) {
 	const [data, setData] = useState([]);
-	useEffect(() => {
-		const reqURL = request(searchInfo).daily;
+	const fetchData = async () => {
+		const reqURL = trainAPI(
+			originStation,
+			destination,
+			date
+		);
 		// console.log("reqURL:  ", reqURL);
-		axios
+		await axios
 			.get(reqURL, { headers: getAuthorizationHeader() })
 			.then((res) => setData(res.data.TrainTimetables))
 			.catch((error) => console.log(error));
-	}, [searchInfo]);
+	};
+	useEffect(() => {
+		fetchData();
+	}, [date, destination, originStation]);
 
 	const trainInfo = data.map((item) => ({
 		// trainType: item.TrainInfo.TrainTypeCode,
@@ -57,7 +64,10 @@ function TrainList({ searchInfo }) {
 						{trainInfo.map((item) => (
 							<TableRow>
 								<TableCell align="center">
-									{item.trainType.replace(/\([^()]*\)/g, '')}
+									{item.trainType.replace(
+										/\([^()]*\)/g,
+										""
+									)}
 								</TableCell>
 								<TableCell align="center">
 									{item.trainID}

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import stationInfo from "../../json/StationInfo.json";
+import { format } from "date-fns";
 import "./Home.css";
 import BusList from "../../Components/BusList";
 import TrainList from "../../Components/TrainList";
@@ -8,15 +9,13 @@ function Home() {
 	const [trainOrigin, setTrainOrigin] = useState("高雄");
 	const [trainDestination, setTrainDestination] =
 		useState("台南");
-	const [city, setCity] = useState("");
+	// const [city, setCity] = useState("");
 	const [busRoute, setBusRoute] = useState("藍幹線");
 	const [searchInfo, setSearchInfo] = useState([]);
 
-	// 抓取當地時間f
-	const date = new Date()
-		.toLocaleDateString()
-		.replaceAll("/", "-");
-
+	// 抓取當地時間
+	const date = format(new Date(), "yyyy-MM-dd");
+	
 	const searchButton = (e) => {
 		e.preventDefault();
 		// 將車站名轉換成車站編號
@@ -53,10 +52,10 @@ function Home() {
 		<div className="home">
 			<h1>火車及公車時刻表查詢</h1>
 			<div className="home__search">
+				
 				<form action="" className="home__searchInfo">
 					<div className="home__searchTrain">
 						<h2>火車時刻表</h2>
-						{/* <input type="date" placeholder="日期" /> */}
 						<input
 							className="home__trainStation"
 							type="text"
@@ -83,19 +82,21 @@ function Home() {
 							date={searchInfo.date}
 						/>
 					</div>
+
 					<button
 						className="searchBtn"
 						onClick={searchButton}>
 						查詢
 					</button>
+
 					<div className="home__searchBus">
 						<h2>公車時刻表</h2>
 						{/* select option */}
-						<input
+						{/* <input
 							type="text"
 							placeholder="縣市"
-							// onChange={(e) => setCity(e.target.value)}
-						/>
+							onChange={(e) => setCity(e.target.value)}
+						/> */}
 						<input
 							type="text"
 							placeholder="路線"
@@ -103,14 +104,13 @@ function Home() {
 						/>
 						{/* 顯示公車時刻表單 */}
 						<BusList
-							// busRoute={searchInfo.busRoute}
 							// city={searchInfo.city}
-							// position={searchButton.busPosition}
 							positionLat={searchInfo.positionLat}
 							positionLon={searchInfo.positionLon}
 							busRoute={searchInfo.busRoute}
 						/>
 					</div>
+					
 				</form>
 			</div>
 		</div>

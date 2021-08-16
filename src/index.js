@@ -2,10 +2,14 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Home from "./page/Home/Home.js";
 import "./index.css";
+import Bus from "./page/Taichung/Bus.js";
+
+
 
 ReactDOM.render(
 	<React.StrictMode>
-		<Home />
+		{/* <Home /> */}
+		<Bus />
 	</React.StrictMode>,
 	document.getElementById("root")
 );

@@ -1,0 +1,26 @@
+.bus {
+	text-align: center;
+	background-color: #dadbd3;
+	height: 100vh;
+	overflow-y: scroll;
+}
+.bus > h1 {
+	padding: 30px 0px;
+}
+
+.bus__searchForm {
+	display: flex;
+	/* flex-direction: column; */
+	align-items: flex-start;
+	justify-content: center;
+}
+
+.bus__searchContainer > input {
+	border-radius: 15px;
+	padding: 10px;
+	margin-right: 5px;
+}
+
+.bus__searchContainer > input:focus {
+	outline: none;
+}

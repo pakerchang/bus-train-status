@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
 import "./TrainList.css";
 import {
@@ -14,24 +15,26 @@ import getAuthorizationHeader from "../apiKey";
 
 function TrainList({ originStation, destination, date }) {
 	const [data, setData] = useState([]);
-	const fetchData = async () => {
-		const reqURL = trainAPI(
-			originStation,
-			destination,
-			date
-		);
-		// console.log("reqURL:  ", reqURL);
-		await axios
-			.get(reqURL, { headers: getAuthorizationHeader() })
-			.then((res) => setData(res.data.TrainTimetables))
-			.catch((error) => console.log(error));
-	};
-	useEffect(() => {
-		fetchData();
-	}, [date, destination, originStation]);
+
+	useEffect(async () => {
+		if (originStation && destination && date !== "") {
+			const reqURL = trainAPI(
+				originStation,
+				destination,
+				date
+			);
+			// console.log("reqURL:  ", reqURL);
+			await axios
+				.get(reqURL, { headers: getAuthorizationHeader() })
+				.then((res) => {
+					console.log(res.data);
+					setData(res.data.TrainTimetables);
+				})
+				.catch((error) => console.log(error));
+		}
+	}, [originStation, destination, date]);
 
 	const trainInfo = data.map((item) => ({
-		// trainType: item.TrainInfo.TrainTypeCode,
 		trainID: item.TrainInfo.TrainNo,
 		trainType: item.TrainInfo.TrainTypeName.Zh_tw,
 		departure: item.StopTimes[0].DepartureTime,

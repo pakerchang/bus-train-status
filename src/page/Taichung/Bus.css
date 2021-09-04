@@ -10,7 +10,6 @@
 
 .bus__searchForm {
 	display: flex;
-	/* flex-direction: column; */
 	align-items: flex-start;
 	justify-content: center;
 }
@@ -23,4 +22,19 @@
 
 .bus__searchContainer > input:focus {
 	outline: none;
+}
+.bus__userTips {
+	padding: 15px;
+}
+.MuiTable-root {
+	text-align: center;
+}
+.MuiTableCell-root {
+	text-align: center;
+	align-items: center;
+}
+
+.MuiTableBody-root {
+	align-items: center;
+	text-align: center;
 }

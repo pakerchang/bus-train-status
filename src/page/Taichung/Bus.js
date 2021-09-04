@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-expressions */
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from "react";
 import "./Bus.css";
@@ -14,13 +15,12 @@ import {
 } from "@material-ui/core";
 
 function Bus() {
-	const [routeInput, setRouteInput] = useState("綠1");
-	const [originInput, setOriginInput] =
-		useState("北新國中");
+	const [routeInput, setRouteInput] = useState("");
+	const [originInput, setOriginInput] = useState("");
 	const [destinationInput, setDestinationInput] =
-		useState("中山國中");
+		useState("");
 	const [data, setData] = useState([]);
-	const [filterData, setFilterData] = useState([]);
+	const [outputData, setOutputData] = useState();
 
 	const fetchData = async () => {
 		const reqURL = taichungBus(routeInput);
@@ -50,77 +50,50 @@ function Bus() {
 		// rename Object
 		const station = data.map((item) => {
 			// 解 Stops Array
-			return item.Stops.map((stops, index) => {
+			return item.Stops.map((stopsArray, index) => {
+				const result = stopsArray.TimeTables.map(
+					(timeArray) => {
+						return {
+							routeName: item.RouteName.Zh_tw,
+							id: stopsArray.StopID,
+							stationName: stopsArray.StopName.Zh_tw,
+							endStation: item.DestinationStopName.Zh_tw,
+							departTime: timeArray.ArrivalTime,
+						};
+					}
+				);
 				return {
-					id: stops.StopID,
 					order: index,
-					stationName: stops.StopName.Zh_tw,
-					timeTables: stops.TimeTables,
+					stationName: stopsArray.StopName.Zh_tw,
+					result,
 				};
 			});
-			// const schedule = item.Stops.map((stops, index) => ({
-			// 	id: stops.StopID,
-			// 	order: index,
-			// 	stationName: stops.StopName.Zh_tw,
-			// 	timeTables: stops.TimeTables,
-			// }));
-			// return {
-			// 	routeName: item.RouteName.Zh_tw,
-			// 	destinationID: item.DestinationStopID,
-			// 	destinationStationName:
-			// 		item.DestinationStopName.Zh_tw,
-			// 	schedule,
-			// };
 		});
 		console.log("station: ", station);
-		// console.log("flat: ", station.flat(2));
-		setFilterData(
-			station.map((item) => {
-				//挑出起迄站
-				const departStation = item.find((match) =>
-					originInput.includes(match.stationName)
+
+		//挑出起迄站
+		const findStation = station.map((item) => {
+			const departStation = item.find((match) =>
+				originInput.includes(match.stationName)
+			);
+			const destinationStation = item.find((match) =>
+				destinationInput.includes(match.stationName)
+			);
+			return { departStation, destinationStation };
+		});
+		console.log("findstation: ", findStation);
+
+		setOutputData(
+			findStation.find((item) => {
+				return (
+					item.departStation.order <
+					item.destinationStation.order
 				);
-				const destinationStation = item.find((match) =>
-					destinationInput.includes(match.stationName)
-				);
-				const endStation = item[item.length - 1];
-				return {
-					departStation,
-					destinationStation,
-					endStation,
-				};
 			})
 		);
+	}, [data, setOutputData]);
+	console.log("output: ", outputData);
 
-		filterData.forEach((item) => console.log('item: ',item));
-
-		// setFilterData(pick);
-		// const pick = station.map((item) => {
-		// 	//挑出起迄站
-		// 	const departStation = item.schedule.find((match) =>
-		// 		originInput.includes(match.stationName)
-		// 	);
-		// 	const destinationStation = item.schedule.find(
-		// 		(match) =>
-		// 			destinationInput.includes(match.stationName)
-		// 	);
-		// 	return { departStation, destinationStation };
-		// });
-
-		// setFilterData(pick);
-
-		// setFilterData(
-		// 	pick.find(
-		// 		(item) =>
-		// 			item.departStation.order <
-		// 			item.destinationStation.order
-		// 	)
-		// );
-		// 過濾掉多餘的空陣列
-		// setFilterData(pick.filter((item) => item.length > 0));
-	}, [data]);
-
-	console.log("filter: ", filterData);
 	return (
 		<div className="bus">
 			<h1>台中公車時刻表查詢</h1>
@@ -151,26 +124,78 @@ function Bus() {
 							setDestinationInput(e.target.value)
 						}
 					/>
-
 					<button
 						className="bus__searchBtn"
 						onClick={searchBtn}>
 						Go
 					</button>
-
+					<p className="bus__userTips">
+						因功能未完善，請完整輸入站牌及路線名稱，ex:
+						路線：14副2 、 站牌名： 四張犁(昌平路)
+					</p>
 					<TableContainer>
 						<Table aria-label="collapsible table">
 							<TableHead>
 								<TableRow>
-									<TableCell>路線</TableCell>
-									<TableCell>起點站</TableCell>
-									<TableCell>發車時間</TableCell>
-									<TableCell>目的地</TableCell>
-									<TableCell>抵達時間</TableCell>
-									<TableCell>終點站</TableCell>
+									<TableCell align="center">路線</TableCell>
+									<TableCell align="center">
+										起點站
+									</TableCell>
+									<TableCell align="center">
+										發車時間
+									</TableCell>
+									<TableCell align="center">
+										目的地
+									</TableCell>
+									<TableCell align="center">
+										抵達時間
+									</TableCell>
+									<TableCell align="center">
+										終點站
+									</TableCell>
 								</TableRow>
 							</TableHead>
-							<TableBody></TableBody>
+							<TableBody>
+								{outputData === undefined ? (
+									//防止頁面載入時提前render
+									<TableCell align="center"></TableCell>
+								) : (
+									outputData.departStation.result.map(
+										// 利用departStation idex 連帶將 destinationStation 的資料一同 map 出來
+										(departItem, idx) => (
+											<TableRow>
+												<TableCell align="center">
+													{departItem.routeName}
+												</TableCell>
+												<TableCell align="center">
+													{departItem.stationName}
+												</TableCell>
+												<TableCell align="center">
+													{departItem.departTime}
+												</TableCell>
+												<TableCell align="center">
+													{
+														outputData.destinationStation
+															.result[idx].stationName
+													}
+												</TableCell>
+												<TableCell align="center">
+													{
+														outputData.destinationStation
+															.result[idx].departTime
+													}
+												</TableCell>
+												<TableCell align="center">
+													{
+														outputData.destinationStation
+															.result[idx].endStation
+													}
+												</TableCell>
+											</TableRow>
+										)
+									)
+								)}
+							</TableBody>
 						</Table>
 					</TableContainer>
 				</div>
@@ -180,23 +205,3 @@ function Bus() {
 }
 
 export default Bus;
-
-// {filterData.forEach((item) => {
-// 									// const timeTables = item.departStation.timeTables.map(times=> ({}))
-// 									return (
-// 										<TableRow>
-// 											{/* <TableCell>{item.routeName}</TableCell> */}
-// 											<TableCell>
-// 												{/* {item[0].stationName} */}
-// 											</TableCell>
-// 											<TableCell>
-// 												{/* {time[0].arrivalTime} */}
-// 											</TableCell>
-// 											<TableCell>
-// 												{/* {item[1].stationName} */}
-// 											</TableCell>
-// 											<TableCell>抵達時間</TableCell>
-// 											<TableCell>終點站</TableCell>
-// 										</TableRow>
-// 									);
-// 								})}

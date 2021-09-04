@@ -7,7 +7,8 @@ const busAPI = (positionLat, positionLon) => {
 };
 
 const taichungBus = (routeName) => {
-	return `https://ptx.transportdata.tw/MOTC/v2/Bus/DailyStopTimeTable/City/Taichung/${routeName}?$select=RouteID%2C%20RouteName%2C%20SubRouteName%2C%20DestinationStopID%2C%20DestinationStopName%2CStops&$format=JSON`;
+	return `https://ptx.transportdata.tw/MOTC/v2/Bus/DailyStopTimeTable/City/Taichung/${routeName}?$format=JSON`
+	// return `https://ptx.transportdata.tw/MOTC/v2/Bus/DailyStopTimeTable/City/Taichung/${routeName}?$select=RouteID%2C%20RouteName%2C%20SubRouteName%2C%20DestinationStopID%2C%20DestinationStopName%2CStops&$format=JSON`;
 };
 
 export { trainAPI, busAPI, taichungBus };

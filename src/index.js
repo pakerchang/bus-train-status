@@ -8,8 +8,8 @@ import Bus from "./page/Taichung/Bus.js";
 
 ReactDOM.render(
 	<React.StrictMode>
-		{/* <Home /> */}
-		<Bus />
+		<Home />
+		{/* <Bus /> */}
 	</React.StrictMode>,
 	document.getElementById("root")
 );

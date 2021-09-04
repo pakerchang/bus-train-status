@@ -7,6 +7,9 @@
 
 src/apiKey.js
 src/edit.js
+src/test.js
+src/tmp.json
+
 
 # testing
 /coverage

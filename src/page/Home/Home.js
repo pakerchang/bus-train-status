@@ -103,12 +103,12 @@ function Home() {
 							onChange={(e) => setBusRoute(e.target.value)}
 						/>
 						{/* 顯示公車時刻表單 */}
-						<BusList
+						{/* <BusList
 							// city={searchInfo.city}
 							positionLat={searchInfo.positionLat}
 							positionLon={searchInfo.positionLon}
 							busRoute={searchInfo.busRoute}
-						/>
+						/> */}
 					</div>
 					
 				</form>

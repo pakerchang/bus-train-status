@@ -2,7 +2,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from "react";
 import "./Bus.css";
-import { taichungBus } from "../../requests";
+import { busOperator, taichungBus } from "../../requests";
 import getAuthorizationHeader from "../../apiKey";
 import axios from "axios";
 import {
@@ -15,20 +15,34 @@ import {
 } from "@material-ui/core";
 
 function Bus() {
-	const [routeInput, setRouteInput] = useState("");
-	const [originInput, setOriginInput] = useState("");
+	const [cityInput, setCityInput] = useState("Taichung");
+	const [routeInput, setRouteInput] = useState("綠1");
+	const [originInput, setOriginInput] =
+		useState("北新國中");
 	const [destinationInput, setDestinationInput] =
-		useState("");
+		useState("中山國中");
 	const [data, setData] = useState([]);
+	const [operator, setOperator] = useState([]);
 	const [outputData, setOutputData] = useState();
 
 	const fetchData = async () => {
 		const reqURL = taichungBus(routeInput);
+		const operatorURL = busOperator(cityInput);
 		await axios
 			.get(reqURL, { headers: getAuthorizationHeader() })
 			.then((res) => {
-				console.log("raw:", res.data);
+				// console.log("raw:", res.data);
 				setData(res.data);
+			})
+			.catch((err) => console.log(err));
+
+		await axios
+			.get(operatorURL, {
+				headers: getAuthorizationHeader(),
+			})
+			.then((res) => {
+				console.log("operatorData: ", res.data);
+				setOperator(res.data);
 			})
 			.catch((err) => console.log(err));
 	};
@@ -55,7 +69,7 @@ function Bus() {
 					(timeArray) => {
 						return {
 							routeName: item.RouteName.Zh_tw,
-							id: stopsArray.StopID,
+							stopID: stopsArray.StopID,
 							stationName: stopsArray.StopName.Zh_tw,
 							endStation: item.DestinationStopName.Zh_tw,
 							departTime: timeArray.ArrivalTime,
@@ -64,13 +78,23 @@ function Bus() {
 				);
 				return {
 					order: index,
+					id: item.OperatorID,
 					stationName: stopsArray.StopName.Zh_tw,
 					result,
 				};
 			});
 		});
-		console.log("station: ", station);
+		// console.log("station: ", station);
 
+		// pick operator name
+		const matchOperatorName = () => {
+			const tmp = operator.filter((item) => {
+				return item.OperatorID === "19";
+			});
+			console.log("matchOperatorName: ", tmp);
+			return tmp;
+		};
+		// console.log("operatorName: ", matchOperatorName);
 		//挑出起迄站
 		const findStation = station.map((item) => {
 			const departStation = item.find((match) =>
@@ -81,7 +105,8 @@ function Bus() {
 			);
 			return { departStation, destinationStation };
 		});
-		console.log("findstation: ", findStation);
+		// console.log("findstation: ", findStation);
+		matchOperatorName(findStation.id);
 
 		setOutputData(
 			findStation.find((item) => {
@@ -129,43 +154,51 @@ function Bus() {
 						onClick={searchBtn}>
 						Go
 					</button>
-					<p className="bus__userTips">
-						因功能未完善，請完整輸入站牌及路線名稱，ex:
-						路線：14副2 、 站牌名： 四張犁(昌平路)
-					</p>
-					<TableContainer>
-						<Table aria-label="collapsible table">
-							<TableHead>
-								<TableRow>
-									<TableCell align="center">路線</TableCell>
-									<TableCell align="center">
-										起點站
-									</TableCell>
-									<TableCell align="center">
-										發車時間
-									</TableCell>
-									<TableCell align="center">
-										目的地
-									</TableCell>
-									<TableCell align="center">
-										抵達時間
-									</TableCell>
-									<TableCell align="center">
-										終點站
-									</TableCell>
-								</TableRow>
-							</TableHead>
-							<TableBody>
-								{outputData === undefined ? (
-									//防止頁面載入時提前render
-									<TableCell align="center"></TableCell>
-								) : (
-									outputData.departStation.result.map(
+
+					{outputData === undefined ? (
+						//防止頁面載入時提前render
+						<h3 className="bus__userTips">
+							因功能未完善，請完整輸入站牌及路線名稱，ex:
+							路線：14副2 、 站牌名： 四張犁(昌平路)
+						</h3>
+					) : (
+						<TableContainer>
+							<Table aria-label="collapsible table">
+								<TableHead>
+									<TableRow>
+										<TableCell align="center">
+											路線
+										</TableCell>
+										<TableCell align="center">
+											客運
+										</TableCell>
+										<TableCell align="center">
+											起點站
+										</TableCell>
+										<TableCell align="center">
+											發車時間
+										</TableCell>
+										<TableCell align="center">
+											目的地
+										</TableCell>
+										<TableCell align="center">
+											抵達時間
+										</TableCell>
+										<TableCell align="center">
+											終點站
+										</TableCell>
+									</TableRow>
+								</TableHead>
+								<TableBody>
+									{outputData.departStation.result.map(
 										// 利用departStation idex 連帶將 destinationStation 的資料一同 map 出來
 										(departItem, idx) => (
 											<TableRow>
 												<TableCell align="center">
 													{departItem.routeName}
+												</TableCell>
+												<TableCell align="center">
+													客運
 												</TableCell>
 												<TableCell align="center">
 													{departItem.stationName}
@@ -193,11 +226,11 @@ function Bus() {
 												</TableCell>
 											</TableRow>
 										)
-									)
-								)}
-							</TableBody>
-						</Table>
-					</TableContainer>
+									)}
+								</TableBody>
+							</Table>
+						</TableContainer>
+					)}
 				</div>
 			</form>
 		</div>

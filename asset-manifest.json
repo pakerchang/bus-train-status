@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/bus-train-status/static/css/main.c9ea6536.chunk.css",
-    "main.js": "/bus-train-status/static/js/main.4128567a.chunk.js",
-    "main.js.map": "/bus-train-status/static/js/main.4128567a.chunk.js.map",
+    "main.js": "/bus-train-status/static/js/main.1e7f19bf.chunk.js",
+    "main.js.map": "/bus-train-status/static/js/main.1e7f19bf.chunk.js.map",
     "runtime-main.js": "/bus-train-status/static/js/runtime-main.7e94256b.js",
     "runtime-main.js.map": "/bus-train-status/static/js/runtime-main.7e94256b.js.map",
     "static/js/2.ae352e12.chunk.js": "/bus-train-status/static/js/2.ae352e12.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.7e94256b.js",
     "static/js/2.ae352e12.chunk.js",
     "static/css/main.c9ea6536.chunk.css",
-    "static/js/main.4128567a.chunk.js"
+    "static/js/main.1e7f19bf.chunk.js"
   ]
 }

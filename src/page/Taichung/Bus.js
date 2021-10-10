@@ -31,7 +31,7 @@ function Bus() {
 		await axios
 			.get(reqURL, { headers: getAuthorizationHeader() })
 			.then((res) => {
-				// console.log("raw:", res.data);
+				console.log("raw:", res.data);
 				setData(res.data);
 			})
 			.catch((err) => console.log(err));
@@ -107,7 +107,7 @@ function Bus() {
 		});
 		// console.log("findstation: ", findStation);
 		matchOperatorName(findStation.id);
-
+		// console.log("sort: ", findStation.sort());
 		setOutputData(
 			findStation.find((item) => {
 				return (
@@ -116,7 +116,7 @@ function Bus() {
 				);
 			})
 		);
-	}, [data, setOutputData]);
+	}, [data]);
 	console.log("output: ", outputData);
 
 	return (
@@ -169,9 +169,9 @@ function Bus() {
 										<TableCell align="center">
 											路線
 										</TableCell>
-										<TableCell align="center">
+										{/* <TableCell align="center">
 											客運
-										</TableCell>
+										</TableCell> */}
 										<TableCell align="center">
 											起點站
 										</TableCell>
@@ -192,40 +192,43 @@ function Bus() {
 								<TableBody>
 									{outputData.departStation.result.map(
 										// 利用departStation idex 連帶將 destinationStation 的資料一同 map 出來
-										(departItem, idx) => (
-											<TableRow>
-												<TableCell align="center">
-													{departItem.routeName}
-												</TableCell>
-												<TableCell align="center">
+										(departItem, idx) => {
+											departItem.departTime.sort();
+											return (
+												<TableRow>
+													<TableCell align="center">
+														{departItem.routeName}
+													</TableCell>
+													{/* <TableCell align="center">
 													客運
-												</TableCell>
-												<TableCell align="center">
-													{departItem.stationName}
-												</TableCell>
-												<TableCell align="center">
-													{departItem.departTime}
-												</TableCell>
-												<TableCell align="center">
-													{
-														outputData.destinationStation
-															.result[idx].stationName
-													}
-												</TableCell>
-												<TableCell align="center">
-													{
-														outputData.destinationStation
-															.result[idx].departTime
-													}
-												</TableCell>
-												<TableCell align="center">
-													{
-														outputData.destinationStation
-															.result[idx].endStation
-													}
-												</TableCell>
-											</TableRow>
-										)
+												</TableCell> */}
+													<TableCell align="center">
+														{departItem.stationName}
+													</TableCell>
+													<TableCell align="center">
+														{departItem.departTime}
+													</TableCell>
+													<TableCell align="center">
+														{
+															outputData.destinationStation
+																.result[idx].stationName
+														}
+													</TableCell>
+													<TableCell align="center">
+														{
+															outputData.destinationStation
+																.result[idx].departTime
+														}
+													</TableCell>
+													<TableCell align="center">
+														{
+															outputData.destinationStation
+																.result[idx].endStation
+														}
+													</TableCell>
+												</TableRow>
+											);
+										}
 									)}
 								</TableBody>
 							</Table>

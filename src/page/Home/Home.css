@@ -1,58 +1,20 @@
-.home {
-	text-align: center;
-	background-color: #dadbd3;
-	height: 100vh;
-	/* 解決時刻表呈現資料過多導致超出幅度的狀況 */
-	overflow-y: scroll;
-}
-
-.home > h1 {
-	padding: 30px 0px;
-}
-
 .home__searchInfo {
 	display: flex;
-	align-items: flex-start;
+	align-items: center;
 	justify-content: center;
+	flex-direction: column;
 }
-.home__searchTrain {
-	margin-right: 150px;
-}
-
-.home__searchBus {
-	margin-left: 150px;
+.home__train {
+	display: flex;
 }
 
-.home__searchTrain > h2,
+.home__train > h2,
 .home__searchBus > h2 {
 	margin-bottom: 20px;
 }
 
-.home__searchTrain > input,
-.home__searchBus > input {
-	border-radius: 15px;
-	padding: 10px;
-	margin-right: 5px;
-}
-
-.home__searchTrain > input:focus,
+.home__home__train > input:focus,
 .home__searchBus > input:focus {
 	outline: none;
 }
 
-.searchBtn {
-	cursor: pointer;
-	margin-top: 50px;
-	padding: 30px 30px;
-	background-color: #fff;
-	border-radius: 50px;
-	border: none;
-}
-
-.searchBtn:hover {
-	background-color: goldenrod;
-}
-
-.searchBtn:focus {
-	outline: none;
-}

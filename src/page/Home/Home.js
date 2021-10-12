@@ -8,12 +8,10 @@ import { format } from "date-fns";
 // component
 // import BusList from "../../Components/BusList";
 // import TrainList from "../../Components/TrainList";
-
 // train list component
 import axios from "axios";
 import { trainAPI } from "../../requests";
 import getAuthorizationHeader from "../../apiKey";
-
 // material-ui
 import {
 	TableContainer,
@@ -190,12 +188,10 @@ export default function Home(scrollTarget) {
 									<TableHead id="back-to-top-anchor">
 										<TableRow>
 											<TableCell className={classes.tableHeadCell} align="center">
-												車種車次 ( 始發站 → 終點站 )
+												<div className={classes.textDiv} style={{marginLeft:'15px'}}>
+													車種車次 (始發站 <ArrowRightAlt /> 終點站)
+												</div>
 											</TableCell>
-											{/* <TableCell align="center">
-												車種車次 (始發站{" "}
-												<ArrowRightAltIcon /> 終點站)
-											</TableCell> */}
 											<TableCell className={classes.tableHeadCell} align="center">
 												車次
 											</TableCell>
@@ -218,11 +214,11 @@ export default function Home(scrollTarget) {
 											return (
 												<TableRow key={item.trainID}>
 													<TableCell align="left" className={classes.tableCell}>
-														{" "}
-														<CustomTrainIcon color={item.trainTypeCode} />
-														{/* <Train className={classes.tableCellIcon} color={item.trainTypeCode} /> */}
-														{item.trainType.replace(/\([^()]*\)/g, "")} ({item.originStationName}{" "}
-														{/* <ArrowRightAltIcon /> */} → {item.endStationName})
+														<div className={classes.textDiv}>
+															<CustomTrainIcon color={item.trainTypeCode} />
+															{item.trainType.replace(/\([^()]*\)/g, "")} ({item.originStationName} <ArrowRightAlt />{" "}
+															{item.endStationName})
+														</div>
 													</TableCell>
 													<TableCell align="center" className={classes.tableCell}>
 														{item.trainID}
@@ -362,15 +358,21 @@ const useStyles = makeStyles((theme) => ({
 		marginTop: "35px",
 		borderRadius: 15,
 		padding: "25px 35px",
+	},
+	tableHeadCell: {
+		fontSize: "16px",
+		padding: "20px 20px",
 		fontFamily: ["Saira Condensed", "sans-serif"],
 	},
-	tableHeadCell: { fontSize: "16px" },
 	tableCell: {
 		backgroundColor: "#fff",
-		alignItems: "center",
 		padding: "20px 30px",
 		fontSize: "18px",
 		fontFamily: ["Saira Condensed", "sans-serif"],
+	},
+	textDiv: {
+		display: "flex",
+		justifyItems: "center",
 	},
 	trainIcon: {
 		color: (props) => {
@@ -391,7 +393,7 @@ const useStyles = makeStyles((theme) => ({
 					return "#00ace8";
 					break;
 				case "6":
-					return "#add8e6";
+					return "#0072B5";
 					break;
 				case "7":
 					return "#a9a9a9";
@@ -404,7 +406,7 @@ const useStyles = makeStyles((theme) => ({
 					break;
 			}
 		},
-		marginRight: "10px",
+		marginRight: 10,
 	},
 	backToTopRoot: {
 		position: "fixed",

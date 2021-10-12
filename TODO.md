@@ -6,15 +6,17 @@ Project Description
 
 ### Todo
 
-- [ ] 空陣列時，頁面顯示  
-- [ ] 編寫 icon 伴隨車種資料改變顏色邏輯  
 
 ### In Progress
 
-- [ ] 回到頂部Button  
+- [ ] add google & facebook login  
+- [ ] 新增menu欄位  
 
 ### Done ✓
 
+- [x] 編寫 icon 伴隨車種資料改變顏色邏輯  
+- [x] 空陣列時，頁面顯示  
+- [x] 回到頂部Button  
 - [x] 編寫 API 回傳空陣列時的防呆機制  
 - [x] 公車資料解構  
 - [x] 串接公車api  

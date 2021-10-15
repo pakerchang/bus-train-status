@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "76e3add5908eb3a64d7044de2dc3d251",
+    "revision": "895adfdb232421caf53476d8bc203c4e",
     "url": "/bus-train-status/index.html"
   },
   {
-    "revision": "421d6de7254c08794341",
+    "revision": "28509bf9130d664c64cb",
     "url": "/bus-train-status/static/css/main.c630f60f.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/bus-train-status/static/js/2.3432acb3.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "421d6de7254c08794341",
-    "url": "/bus-train-status/static/js/main.3be031ff.chunk.js"
+    "revision": "28509bf9130d664c64cb",
+    "url": "/bus-train-status/static/js/main.d90a29cc.chunk.js"
   },
   {
     "revision": "22021b4f69eea3550a8b",

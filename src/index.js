@@ -4,14 +4,16 @@ import "./index.css";
 import Home from "./page/Home/Home.js";
 import BackToTop from "./BackToTop.js";
 import TrainLiveStation from "./Components/TrainLiveStation.js";
-import { BrowserRouter as Router, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 // import Bus from "./page/Taichung/Bus.js";
 
 ReactDOM.render(
 	<React.StrictMode>
 		<Router>
-			{/* <Home /> */}
-			<TrainLiveStation />
+			<Switch>
+				<Route path="/LiveStation" component={TrainLiveStation} />
+				<Route path="/" component={Home} />
+			</Switch>
 			{/* <BackToTop /> */}
 			{/* <Bus /> */}
 		</Router>

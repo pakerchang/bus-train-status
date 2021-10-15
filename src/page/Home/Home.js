@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from "react";
 // files
 import stationInfo from "../../json/stationInfo.json";
-import "./Home.css";
 //date
 import { format } from "date-fns";
 // component
@@ -27,11 +26,22 @@ import {
 	CircularProgress,
 	AppBar,
 	Toolbar,
-	Button,
 	Typography,
 	IconButton,
+	Menu,
+	MenuItem,
 } from "@material-ui/core";
-import { Search, ArrowRightAlt, Train, KeyboardArrowUp, Menu } from "@material-ui/icons";
+import {
+	Search,
+	ArrowRightAlt,
+	Train,
+	KeyboardArrowUp,
+	GitHub,
+	EmailRounded,
+	AccountCircleRounded,
+	Email,
+} from "@material-ui/icons";
+import MenuIcon from "@material-ui/icons/Menu";
 import { green } from "@material-ui/core/colors";
 import clsx from "clsx";
 import TextField from "@material-ui/core/TextField";
@@ -57,6 +67,28 @@ export default function Home(scrollTarget) {
 	const buttonClassName = clsx({
 		[classes.buttonSuccess]: success,
 	});
+
+	const [anchorEl, setAnchorEl] = React.useState(null);
+	const menuClick = (event) => {
+		setAnchorEl(event.currentTarget);
+	};
+	const menuClose = (props) => {
+		switch (props) {
+			case "github":
+				window.location.href = "https://github.com/pakerchang";
+				setAnchorEl(null);
+				break;
+			case "sourceCode":
+				window.location.href = "https://github.com/pakerchang/bus-train-status";
+				setAnchorEl(null);
+				break;
+			case "mail":
+				window.location.href = "mailto:pakerchang.project@gmail.com";
+			default:
+				setAnchorEl(null);
+				break;
+		}
+	};
 
 	const fetchData = async (originStation, endStation) => {
 		const reqURL = trainAPI(originStation, endStation, date);
@@ -91,7 +123,7 @@ export default function Home(scrollTarget) {
 		}
 	};
 
-	// input icon control
+	// input icon controller
 	useEffect(() => {
 		if (trainOriginInput !== null && trainDestinationInput !== null) {
 			setSuccess(true);
@@ -133,123 +165,136 @@ export default function Home(scrollTarget) {
 		<div className={classes.home}>
 			<AppBar className={classes.appBar}>
 				<Toolbar>
-					<IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-						<Menu />
-					</IconButton>
 					<Typography variant="h6" className={classes.title}>
 						火車時刻表查詢
 					</Typography>
-					<Button color="inherit">Login</Button>
+					<IconButton
+						edge="start"
+						className={classes.menuButton}
+						color="inherit"
+						aria-label="menu"
+						aria-controls="simple-menu"
+						aria-haspopup="true"
+						onClick={menuClick}>
+						<MenuIcon />
+					</IconButton>
+					<Menu anchorEl={anchorEl} keepMounted open={Boolean(anchorEl)} onClose={menuClose}>
+						<MenuItem onClick={(e) => menuClose("github")}>
+							<GitHub /> <span style={{ marginLeft: 10 }}>Github</span>
+						</MenuItem>
+						<MenuItem onClick={(e) => menuClose("sourceCode")}>
+							<GitHub /> <span style={{ marginLeft: 10 }}>Source Code</span>
+						</MenuItem>
+						<MenuItem onClick={(e) => menuClose("mail")}>
+							<EmailRounded /> <span style={{ marginLeft: 10 }}>Contact</span>
+						</MenuItem>
+						<MenuItem>
+							<AccountCircleRounded />
+							<span style={{ marginLeft: 10 }}>Login</span>
+						</MenuItem>
+					</Menu>
 				</Toolbar>
 			</AppBar>
-			<div className="home__search">
-				<form action="" className="home__searchInfo">
-					<div className={classes.progressRoot}>
-						<Autocomplete
-							autoSelect
-							autoComplete
-							autoHighlight
-							value={trainOriginInput}
-							onChange={(e, newValue) => {
-								setTrainOriginInput(newValue);
-							}}
-							options={stationInfo.map((option) => option.StationName.Zh_tw)}
-							style={{ width: 170, padding: "0px 25px" }}
-							renderInput={(params) => <TextField {...params} label="出發站" variant="outlined" />}
-						/>
 
-						<div className={classes.progressWrapper}>
-							<Fab aria-label="search" color="primary" className={buttonClassName} onClick={searchBtn}>
-								{success ? <Search /> : <ArrowRightAlt />}
-							</Fab>
-							{loading && <CircularProgress size={68} className={classes.fabProgress} />}
-						</div>
+			<form className={classes.trainInput}>
+				<div className={classes.progressRoot}>
+					<Autocomplete
+						autoSelect
+						autoComplete
+						autoHighlight
+						value={trainOriginInput}
+						onChange={(e, newValue) => {
+							setTrainOriginInput(newValue);
+						}}
+						options={stationInfo.map((option) => option.StationName.Zh_tw)}
+						style={{ width: 170, padding: "0px 25px" }}
+						renderInput={(params) => <TextField {...params} label="出發站" variant="outlined" />}
+					/>
 
-						<Autocomplete
-							autoSelect
-							autoComplete
-							autoHighlight
-							value={trainDestinationInput}
-							onChange={(e, newValue) => {
-								setTrainDestinationInput(newValue);
-							}}
-							options={stationInfo.map((option) => option.StationName.Zh_tw)}
-							style={{ width: 170, padding: "0px 25px" }}
-							renderInput={(params) => <TextField {...params} label="終點站" variant="outlined" />}
-						/>
+					<div className={classes.progressWrapper}>
+						<Fab aria-label="search" color="primary" className={buttonClassName} onClick={searchBtn}>
+							{success ? <Search /> : <ArrowRightAlt />}
+						</Fab>
+						{loading && <CircularProgress size={68} className={classes.fabProgress} />}
 					</div>
 
-					<div className="trainList">
-						{outputData === undefined || rawData.length === 0 ? (
-							<h3>無資料</h3>
-						) : (
-							<TableContainer>
-								<Table className={classes.tableRoot}>
-									<TableHead id="back-to-top-anchor">
-										<TableRow>
-											<TableCell className={classes.tableHeadCell} align="center">
-												<div className={classes.textDiv} style={{marginLeft:'15px'}}>
-													車種車次 (始發站 <ArrowRightAlt /> 終點站)
-												</div>
-											</TableCell>
-											<TableCell className={classes.tableHeadCell} align="center">
-												車次
-											</TableCell>
-											<TableCell className={classes.tableHeadCell} align="center">
-												出發時間
-											</TableCell>
-											<TableCell className={classes.tableHeadCell} align="center">
-												抵達時間
-											</TableCell>
-											<TableCell className={classes.tableHeadCell} align="center">
-												行駛方向
-											</TableCell>
-											{/* <TableCell align="center">
+					<Autocomplete
+						autoSelect
+						autoComplete
+						autoHighlight
+						value={trainDestinationInput}
+						onChange={(e, newValue) => {
+							setTrainDestinationInput(newValue);
+						}}
+						options={stationInfo.map((option) => option.StationName.Zh_tw)}
+						style={{ width: 170, padding: "0px 25px" }}
+						renderInput={(params) => <TextField {...params} label="終點站" variant="outlined" />}
+					/>
+				</div>
+
+				<div className="trainList">
+					{outputData === undefined || rawData.length === 0 ? (
+						<h3>無資料</h3>
+					) : (
+						<TableContainer>
+							<Table className={classes.tableRoot}>
+								<TableHead id="back-to-top-anchor">
+									<TableRow>
+										<TableCell className={classes.tableHeadCell}>
+											<div className={classes.textDiv} style={{ marginLeft: 15 }}>
+												車種車次 (始發站 <ArrowRightAlt /> 終點站)
+											</div>
+										</TableCell>
+										<TableCell className={classes.tableHeadCell}>車次</TableCell>
+										<TableCell className={classes.tableHeadCell}>出發時間</TableCell>
+										<TableCell className={classes.tableHeadCell}>抵達時間</TableCell>
+										<TableCell className={classes.tableHeadCell}>行駛方向</TableCell>
+										{/* <TableCell align="center">
 												行駛時間
 											</TableCell> */}
-										</TableRow>
-									</TableHead>
-									<TableBody>
-										{outputData.map((item) => {
-											return (
-												<TableRow key={item.trainID}>
-													<TableCell align="left" className={classes.tableCell}>
-														<div className={classes.textDiv}>
-															<CustomTrainIcon color={item.trainTypeCode} />
-															{item.trainType.replace(/\([^()]*\)/g, "")} ({item.originStationName} <ArrowRightAlt />{" "}
-															{item.endStationName})
-														</div>
-													</TableCell>
-													<TableCell align="center" className={classes.tableCell}>
-														{item.trainID}
-													</TableCell>
-													<TableCell align="center" className={classes.tableCell}>
-														{item.departure}
-													</TableCell>
-													<TableCell align="center" className={classes.tableCell}>
-														{item.arrival}
-													</TableCell>
-													<TableCell align="center" className={classes.tableCell}>
-														{item.direction === 1 ? "南下" : "北上"}
-													</TableCell>
-												</TableRow>
-											);
-										})}
-									</TableBody>
-								</Table>
-							</TableContainer>
-						)}
-					</div>
-				</form>
-				<ScrollTop {...scrollTarget}>
-					<Fab color="primary" size="large" aria-label="scroll back to top">
-						<KeyboardArrowUp />
-					</Fab>
-				</ScrollTop>
-				{/* <div className="home__searchBus">
+									</TableRow>
+								</TableHead>
+								<TableBody>
+									{outputData.map((item) => {
+										return (
+											<TableRow key={item.trainID}>
+												<TableCell className={classes.tableCell}>
+													<div className={classes.textDiv}>
+														<CustomTrainIcon color={item.trainTypeCode} />
+														{item.trainType.replace(/\([^()]*\)/g, "")} ({item.originStationName} <ArrowRightAlt />{" "}
+														{item.endStationName})
+													</div>
+												</TableCell>
+												<TableCell className={classes.tableCell}>{item.trainID}</TableCell>
+												<TableCell className={classes.tableCell}>{item.departure}</TableCell>
+												<TableCell className={classes.tableCell}>{item.arrival}</TableCell>
+												<TableCell className={classes.tableCell}>{item.direction === 1 ? "南下" : "北上"}</TableCell>
+											</TableRow>
+										);
+									})}
+								</TableBody>
+							</Table>
+						</TableContainer>
+					)}
+				</div>
+			</form>
+			<div className={classes.footer}>
+				<IconButton onClick={(e) => menuClose("sourceCode")}>
+					<GitHub />
+				</IconButton>
+				<IconButton onClick={(e) => menuClose("mail")}>
+					<Email />
+				</IconButton>
+			</div>
+			<ScrollTop {...scrollTarget}>
+				<Fab color="primary" size="large" aria-label="scroll back to top">
+					<KeyboardArrowUp />
+				</Fab>
+			</ScrollTop>
+			{/* <div className="home__searchBus">
 						<h2>公車時刻表</h2> */}
-				{/* select option */}
-				{/* <input
+			{/* select option */}
+			{/* <input
 							type="text"
 							placeholder="縣市"
 							onChange={(e) => setCity(e.target.value)}
@@ -259,15 +304,14 @@ export default function Home(scrollTarget) {
 							placeholder="路線"
 							onChange={(e) => setBusRoute(e.target.value)}
 						/> */}
-				{/* 顯示公車時刻表單 */}
-				{/* <BusList
+			{/* 顯示公車時刻表單 */}
+			{/* <BusList
 							// city={searchInfo.city}
 							positionLat={searchInfo.positionLat}
 							positionLon={searchInfo.positionLon}
 							busRoute={searchInfo.busRoute}
 						/> */}
-				{/* </div> */}
-			</div>
+			{/* </div> */}
 		</div>
 	);
 }
@@ -346,64 +390,61 @@ const useStyles = makeStyles((theme) => ({
 		backgroundColor: "primary",
 	},
 	trainInput: {
-		borderRadius: 15,
-		padding: 10,
-		marginRight: 5,
-		"&:focus": {
-			outline: "none",
-		},
+		display: "flex",
+		alignItems: "center",
+		flexDirection: "column",
 	},
 	tableRoot: {
 		backgroundColor: "#A9A9A9",
 		marginTop: "35px",
-		borderRadius: 15,
+		borderRadius: "15px",
 		padding: "25px 35px",
 	},
 	tableHeadCell: {
+		textAlign: "center",
 		fontSize: "16px",
 		padding: "20px 20px",
 		fontFamily: ["Saira Condensed", "sans-serif"],
 	},
 	tableCell: {
 		backgroundColor: "#fff",
+		textAlign: "center",
 		padding: "20px 30px",
 		fontSize: "18px",
 		fontFamily: ["Saira Condensed", "sans-serif"],
 	},
 	textDiv: {
 		display: "flex",
-		justifyItems: "center",
 	},
 	trainIcon: {
 		color: (props) => {
 			switch (props.color) {
 				case "1":
 					return "#ff5000";
-					break;
+
 				case "2":
 					return "#d00216";
-					break;
+
 				case "3":
 					return "#ff8708";
-					break;
+
 				case "4":
 					return "#ffd200";
-					break;
+
 				case "5":
 					return "#00ace8";
-					break;
+
 				case "6":
 					return "#0072B5";
-					break;
+
 				case "7":
 					return "#a9a9a9";
-					break;
+
 				case "10":
 					return "#00bfff";
-					break;
+
 				default:
 					return console.log("SwitchColor Identify Error");
-					break;
 			}
 		},
 		marginRight: 10,
@@ -413,4 +454,5 @@ const useStyles = makeStyles((theme) => ({
 		bottom: theme.spacing(3),
 		right: theme.spacing(3),
 	},
+	footer: { display: "flex", justifyContent: "center", margin: 40 },
 }));

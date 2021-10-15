@@ -9,11 +9,11 @@ Project Description
 
 ### In Progress
 
-- [ ] add google & facebook login  
-- [ ] 新增menu欄位  
+- [ ] add google login  
 
 ### Done ✓
 
+- [x] 新增menu欄位  
 - [x] 編寫 icon 伴隨車種資料改變顏色邏輯  
 - [x] 空陣列時，頁面顯示  
 - [x] 回到頂部Button  

@@ -1,11 +1,10 @@
 .home__searchInfo {
 	display: flex;
 	align-items: center;
-	justify-content: center;
 	flex-direction: column;
 }
 .home__train {
-	display: flex;
+	/* display: flex; */
 }
 
 .home__train > h2,

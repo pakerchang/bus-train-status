@@ -10,8 +10,11 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 ReactDOM.render(
 	<React.StrictMode>
 		<Router basename={process.env.PUBLIC_URL}>
-			<Route path="/LiveStation" component={TrainLiveStation} />
-			<Route path="/" component={Home} />
+			<Switch>
+				<Route path="/LiveStation" component={TrainLiveStation} />
+				<Route path="/" component={Home} />
+			</Switch>
+
 			{/* <BackToTop /> */}
 			{/* <Bus /> */}
 		</Router>

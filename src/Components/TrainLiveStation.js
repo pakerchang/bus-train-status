@@ -21,10 +21,14 @@ export default function TrainLiveStation() {
 
 	const fetchData = async (stationID) => {
 		const url = trainLiveStation(stationID);
-		await axios.get(url, { headers: getAuthorizationHeader }).then((res) => {
-			console.log("get");
-			setRawData(res.data.RailLiveBoard);
-		});
+		await axios
+			.get(url, {
+				headers: getAuthorizationHeader(),
+			})
+			.then((res) => {
+				// console.log("raw:", res.data);
+				setRawData(res.data);
+			});
 	};
 	const stationClick = (station) => {
 		switch (station) {
@@ -45,20 +49,20 @@ export default function TrainLiveStation() {
 
 	useEffect(() => {
 		if (rawData.length !== 0) {
-			setOutputData(
-				rawData.map((item) => {
-					return {
-						stationName: item.stationName,
-						direction: item.Direction,
-						trainType: item.TrainTypeName,
-						arrivalTime: item.ScheduledArrivalTime,
-						departTime: item.ScheduleDepartTime,
-						delayTime: item.DelayTime,
-					};
-				})
-			);
+			const station = rawData.map((item) => {
+				return {
+					stationID: item.stationID,
+					stationName: item.EndingStationName.Zh_tw,
+					trainType: item.TrainTypeName.Zh_tw,
+					direction: item.Direction,
+					arrivalTime: item.ScheduledArrivalTime,
+					departTime: item.ScheduledDepartureTime,
+					delayTime: item.DelayTime,
+				};
+			});
+			setOutputData(station);
 		}
-	}, [setRawData]);
+	}, [rawData]);
 	return (
 		<div className={classes.root}>
 			<form className={classes.form}>
@@ -75,30 +79,32 @@ export default function TrainLiveStation() {
 					橋頭
 				</Button>
 			</form>
-			{outputData === undefined || rawData.length === 0 ? (
+			{outputData === undefined ? (
 				<h3>No Data</h3>
 			) : (
 				<TableContainer component={Paper} className={classes.tableRoot}>
 					<Table className={classes.table} aria-label="caption table">
 						<TableHead>
 							<TableRow>
-								<TableCell>車站</TableCell>
-								<TableCell>車種</TableCell>
-								<TableCell>到站</TableCell>
-								<TableCell>離站</TableCell>
-								<TableCell>誤點</TableCell>
+								<TableCell style={{ textAlign: "center" }}>車站</TableCell>
+								<TableCell style={{ textAlign: "center" }}>車種</TableCell>
+								<TableCell style={{ textAlign: "center" }}>到站</TableCell>
+								<TableCell style={{ textAlign: "center" }}>離站</TableCell>
+								<TableCell style={{ textAlign: "center" }}>誤點</TableCell>
+								<TableCell style={{ textAlign: "center" }}>方向</TableCell>
 							</TableRow>
 						</TableHead>
 						<TableBody>
 							{outputData.map((item) => (
 								<TableRow>
-									<TableCell component="th" scope="row">
-										<TableCell>{item.stationName}</TableCell>
-										<TableCell>{item.trainTypeName}</TableCell>
-										<TableCell>{item.arrivalTime}</TableCell>
-										<TableCell>{item.departTime}</TableCell>
-										<TableCell>{item.delayTime}</TableCell>
+									<TableCell className={classes.tableBodyCell}>{item.stationName}</TableCell>
+									<TableCell className={classes.tableBodyCell}>{item.trainType.replace(/\([^()]*\)/g, "")}</TableCell>
+									<TableCell className={classes.tableBodyCell}>{item.arrivalTime}</TableCell>
+									<TableCell className={classes.tableBodyCell}>{item.departTime}</TableCell>
+									<TableCell className={classes.tableBodyCell}>
+										{item.delayTime === 0 ? "準點" : "誤點 " + item.delayTime + " 分"}
 									</TableCell>
+									<TableCell className={classes.tableBodyCell}>{item.direction === 1 ? "南下" : "北上"}</TableCell>
 								</TableRow>
 							))}
 						</TableBody>
@@ -111,12 +117,13 @@ export default function TrainLiveStation() {
 
 const useStyles = makeStyles({
 	root: {
+		paddingTop: 30,
 		display: "flex",
 		justifyItems: "center",
 		flexDirection: "column",
-		paddingTop: 30,
 		backgroundColor: "#dadbd3",
 		height: "100vh",
+		overflowX: "auto",
 		"& h3": {
 			textAlign: "center",
 		},
@@ -132,5 +139,12 @@ const useStyles = makeStyles({
 	},
 	table: {
 		maxWidth: "100%",
+	},
+	tableHeadCell: {},
+	tableBodyCell: {
+		width: "auto",
+		textAlign: "center",
+		fontSize: 14,
+		fontFamily: ["Saira Condensed", "sans-serif"],
 	},
 });

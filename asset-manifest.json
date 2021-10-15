@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/bus-train-status/static/css/main.c630f60f.chunk.css",
-    "main.js": "/bus-train-status/static/js/main.3abf13ed.chunk.js",
-    "main.js.map": "/bus-train-status/static/js/main.3abf13ed.chunk.js.map",
+    "main.js": "/bus-train-status/static/js/main.0d1add13.chunk.js",
+    "main.js.map": "/bus-train-status/static/js/main.0d1add13.chunk.js.map",
     "runtime-main.js": "/bus-train-status/static/js/runtime-main.6998d1ef.js",
     "runtime-main.js.map": "/bus-train-status/static/js/runtime-main.6998d1ef.js.map",
     "static/js/2.116bc695.chunk.js": "/bus-train-status/static/js/2.116bc695.chunk.js",
     "static/js/2.116bc695.chunk.js.map": "/bus-train-status/static/js/2.116bc695.chunk.js.map",
     "index.html": "/bus-train-status/index.html",
-    "precache-manifest.9096580af35a6f55d4f912c57f5cbe0d.js": "/bus-train-status/precache-manifest.9096580af35a6f55d4f912c57f5cbe0d.js",
+    "precache-manifest.7dc3251042e0d11a03928b350f7a648a.js": "/bus-train-status/precache-manifest.7dc3251042e0d11a03928b350f7a648a.js",
     "service-worker.js": "/bus-train-status/service-worker.js",
     "static/css/main.c630f60f.chunk.css.map": "/bus-train-status/static/css/main.c630f60f.chunk.css.map",
     "static/js/2.116bc695.chunk.js.LICENSE.txt": "/bus-train-status/static/js/2.116bc695.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.6998d1ef.js",
     "static/js/2.116bc695.chunk.js",
     "static/css/main.c630f60f.chunk.css",
-    "static/js/main.3abf13ed.chunk.js"
+    "static/js/main.0d1add13.chunk.js"
   ]
 }

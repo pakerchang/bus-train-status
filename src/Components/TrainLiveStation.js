@@ -7,7 +7,6 @@ import {
 	TableRow,
 	TableCell,
 	makeStyles,
-	Typography,
 	Button,
 	Paper,
 } from "@material-ui/core";

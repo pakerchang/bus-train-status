@@ -1,6 +1,6 @@
 {
 	"name": "bus-train-status",
-	"homepage": "https://pakerchang.github.io/bus-train-status",
+	"homepage": "https://pakerchang.github.io/bus-train-status/",
 	"version": "0.1.0",
 	"private": true,
 	"dependencies": {

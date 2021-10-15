@@ -2,18 +2,16 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import Home from "./page/Home/Home.js";
-import BackToTop from "./BackToTop.js";
 import TrainLiveStation from "./Components/TrainLiveStation.js";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+// import BackToTop from "./BackToTop.js";
 // import Bus from "./page/Taichung/Bus.js";
 
 ReactDOM.render(
 	<React.StrictMode>
-		<Router>
-			<Switch>
-				<Route path="/LiveStation" component={TrainLiveStation} />
-				<Route path="/" component={Home} />
-			</Switch>
+		<Router basename={process.env.PUBLIC_URL}>
+			<Route path="/LiveStation" component={TrainLiveStation} />
+			<Route path="/" component={Home} />
 			{/* <BackToTop /> */}
 			{/* <Bus /> */}
 		</Router>

@@ -34,7 +34,7 @@ export default function TrainLiveStation() {
 		switch (station) {
 			case 4220:
 				return fetchData(station);
-			case 4320:
+			case 4310:
 				return fetchData(station);
 			case 4330:
 				return fetchData(station);
@@ -69,14 +69,14 @@ export default function TrainLiveStation() {
 				<Button variant="contained" color="primary" onClick={(e) => stationClick(4220)}>
 					台南
 				</Button>
+				<Button variant="contained" color="primary" onClick={(e) => stationClick(4400)}>
+					岡山
+				</Button>
 				<Button variant="contained" color="primary" onClick={(e) => stationClick(4320)}>
 					楠梓
 				</Button>
 				<Button variant="contained" color="primary" onClick={(e) => stationClick(4330)}>
 					新左營
-				</Button>
-				<Button variant="contained" color="primary" onClick={(e) => stationClick(4400)}>
-					橋頭
 				</Button>
 			</form>
 			{outputData === undefined ? (
@@ -102,7 +102,7 @@ export default function TrainLiveStation() {
 									<TableCell className={classes.tableBodyCell}>{item.arrivalTime}</TableCell>
 									<TableCell className={classes.tableBodyCell}>{item.departTime}</TableCell>
 									<TableCell className={classes.tableBodyCell}>
-										{item.delayTime === 0 ? "準點" : "誤點 " + item.delayTime + " 分"}
+										{item.delayTime === 0 ? "準點" : "晚 " + item.delayTime + " 分"}
 									</TableCell>
 									<TableCell className={classes.tableBodyCell}>{item.direction === 1 ? "南下" : "北上"}</TableCell>
 								</TableRow>

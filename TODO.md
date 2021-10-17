@@ -6,6 +6,8 @@ Project Description
 
 ### Todo
 
+- [ ] 調整alert 顯示內容  
+- [ ] live station 時間正則  
 
 ### In Progress
 

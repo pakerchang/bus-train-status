@@ -6,8 +6,7 @@ Project Description
 
 ### Todo
 
-- [ ] 調整alert 顯示內容  
-- [ ] live station 時間正則  
+- [ ] Main page 時間列表UI 重構  
 
 ### In Progress
 
@@ -15,6 +14,7 @@ Project Description
 
 ### Done ✓
 
+- [x] live station 時間正則  
 - [x] 新增menu欄位  
 - [x] 編寫 icon 伴隨車種資料改變顏色邏輯  
 - [x] 空陣列時，頁面顯示  

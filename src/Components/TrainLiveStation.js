@@ -27,7 +27,7 @@ export default function TrainLiveStation() {
 				headers: getAuthorizationHeader(),
 			})
 			.then((res) => {
-				console.log("raw:", res.data);
+				// console.log("raw:", res.data);
 				setRawData(res.data);
 			});
 	};

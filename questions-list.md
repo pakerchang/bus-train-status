@@ -8,25 +8,10 @@
    Ans: ex res.data.(下一層的key值)
 
 4. 串接測試火車時刻表發現 table 有破版問題，同時 HomePage background-color 的顏色並不會跟著 Table 產生的長度向下延伸
-   ans: 在 home.css 中加上 overflow-y : scroll; 後解決為延伸問題
+   ans: 在 home.css 中加上 overflow-y : scroll; 後解決畫面延伸問題
 
 5. 該如何調整 Material-UI Table Component CSS 的問題
    ans: 查詢官網後，發現可以調用 CSS API 找到 className 進行設定 ex: .MuiTable-root
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 公車資料鏈
 從火車api撈到火車站經緯度 > 公車位置範圍 > 列出各個路線預估到站時間 

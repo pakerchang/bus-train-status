@@ -56,23 +56,10 @@ export default function TrainLiveStation() {
 			const south = rawData.filter((item) => {
 				return item.Direction === 0;
 			});
-			const result = [north, south];
-			const station = rawData.map((item) => {
-				return {
-					stationID: item.StationID,
-					stationName: item.EndingStationName.Zh_tw,
-					trainType: item.TrainTypeName.Zh_tw,
-					direction: item.Direction,
-					arrivalTime: item.ScheduledArrivalTime,
-					departTime: item.ScheduledDepartureTime,
-					delayTime: item.DelayTime,
-				};
-			});
-			setOutputData(result);
-			console.log(result);
+			// const result = [north, south];
+			setOutputData([north, south]);
 		}
 	}, [rawData]);
-	// console.log(outputData);
 	return (
 		<div className={classes.root}>
 			<form className={classes.form}>
@@ -108,7 +95,7 @@ export default function TrainLiveStation() {
 							</TableHead>
 							<TableBody>
 								{outputData[0].map((item) => (
-									<TableRow>
+									<TableRow key={item.TrainNo}>
 										<TableCell className={classes.tableBodyCell}>{item.EndingStationName.Zh_tw}</TableCell>
 										<TableCell className={classes.tableBodyCell}>
 											{item.TrainTypeName.Zh_tw.replace(/\([^()]*\)/g, "")}
@@ -143,7 +130,7 @@ export default function TrainLiveStation() {
 							</TableHead>
 							<TableBody>
 								{outputData[1].map((item) => (
-									<TableRow>
+									<TableRow key={item.TrainNo}>
 										<TableCell className={classes.tableBodyCell}>{item.EndingStationName.Zh_tw}</TableCell>
 										<TableCell className={classes.tableBodyCell}>
 											{item.TrainTypeName.Zh_tw.replace(/\([^()]*\)/g, "")}

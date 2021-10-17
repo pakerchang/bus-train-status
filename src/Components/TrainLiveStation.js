@@ -164,7 +164,11 @@ const useStyles = makeStyles({
 		flexDirection: "column",
 		backgroundColor: "#dadbd3",
 		height: "100vh",
-		overflowX: "auto",
+		scrollbarWidth: "none",
+		overflowY: "scroll",
+		"&::-webkit-scrollbar": {
+			display: "none",
+		},
 		"& h3": {
 			textAlign: "center",
 		},

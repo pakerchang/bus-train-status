@@ -27,7 +27,7 @@ export default function TrainLiveStation() {
 				headers: getAuthorizationHeader(),
 			})
 			.then((res) => {
-				// console.log("raw:", res.data);
+				console.log("raw:", res.data);
 				setRawData(res.data);
 			});
 	};
@@ -164,11 +164,8 @@ const useStyles = makeStyles({
 		flexDirection: "column",
 		backgroundColor: "#dadbd3",
 		height: "100vh",
-		scrollbarWidth: "none",
-		overflowY: "scroll",
-		"&::-webkit-scrollbar": {
-			display: "none",
-		},
+		overflow: "auto",
+		WebkitOverflowScrolling: "auto",
 		"& h3": {
 			textAlign: "center",
 		},

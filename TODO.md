@@ -6,6 +6,7 @@ Project Description
 
 ### Todo
 
+- [ ] sec table hv div padding bg color white issue  
 - [ ] Main page 時間列表UI 重構  
 
 ### In Progress

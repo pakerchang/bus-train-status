@@ -6,7 +6,6 @@ Project Description
 
 ### Todo
 
-- [ ] sec table hv div padding bg color white issue  
 - [ ] Main page 時間列表UI 重構  
 
 ### In Progress
@@ -15,6 +14,7 @@ Project Description
 
 ### Done ✓
 
+- [x] github issue #1  
 - [x] live station 時間正則  
 - [x] 新增menu欄位  
 - [x] 編寫 icon 伴隨車種資料改變顏色邏輯  

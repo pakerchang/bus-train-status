@@ -110,7 +110,7 @@ export default function Home(scrollTarget) {
 			trainDestinationInput !== null &&
 			trainOriginInput !== trainDestinationInput
 		) {
-			// fabProgress Component animation start
+			// active fabProgress Component animation 
 			setSuccess(false);
 			setLoading(true);
 			// 將車站名轉換成車站編號
@@ -123,7 +123,7 @@ export default function Home(scrollTarget) {
 		}
 	};
 
-	// input icon controller
+	// input css effect controller
 	useEffect(() => {
 		if (trainOriginInput !== null && trainDestinationInput !== null) {
 			setSuccess(true);
@@ -163,6 +163,7 @@ export default function Home(scrollTarget) {
 
 	return (
 		<div className={classes.home}>
+
 			<AppBar className={classes.appBar}>
 				<Toolbar>
 					<Typography variant="h6" className={classes.title}>
@@ -325,7 +326,7 @@ const ScrollTop = (scrollTarget) => {
 		threshold: 100,
 	});
 	// console.log("trigger: ", trigger);
-	const handleClick = (e) => {
+	const scrollTopClick = (e) => {
 		const anchor = (e.target.ownerDocument || document).querySelector("#back-to-top-anchor");
 		if (anchor) {
 			anchor.scrollIntoView({ behavior: "smooth", block: "center" });
@@ -333,7 +334,7 @@ const ScrollTop = (scrollTarget) => {
 	};
 	return (
 		<Zoom in={!trigger}>
-			<div onClick={handleClick} role="presentation" className={classes.backToTopRoot}>
+			<div onClick={scrollTopClick} role="presentation" className={classes.backToTopRoot}>
 				{children}
 			</div>
 		</Zoom>

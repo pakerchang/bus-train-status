@@ -1,20 +1,22 @@
 ## 整合台鐵與公車每日時刻表查詢
 
-原始發想是為了轉職所做的整合火車及公車預定時刻表，目前在公車部分卡關，先將火車部分整理上線，後續再慢慢完善
+原始發想是為了轉職所做的整合火車及公車預定時刻表，目前在公車部分卡關，先將火車部分整理上線，後續慢慢完善
 
 - [火車時刻查詢](https://train-bus-status.netlify.app/)
 
-- [火車站點即時狀態](https://train-bus-status.netlify.app/LiveStation)
+- [台南、岡山、楠梓，新左營車站點即時狀態](https://train-bus-status.netlify.app/LiveStation)
 > 做給朋友用的 side project
+
 - [公車屍體](https://train-bus-status.netlify.app/Bus)
 
 ---
 
-## 相關套件
+## 使用套件
 
 - [React(CRA)](https://create-react-app.dev/)
 - [React Router DOM](https://reactrouter.com/web/guides/quick-start)
 - [Material-UI Version 4](https://v4.mui.com/)
+- [date-fns](https://github.com/date-fns/date-fns)
 - API 串接使用:
   - [PTX 公眾運輸平台](https://ptx.transportdata.tw/PTX/)
   - [Axios](https://github.com/axios/axios)
@@ -36,7 +38,7 @@ Project Description
 
 ### Todo
 
-- [ ] Main page 時間列表 UI 重構
+- [ ] 火車時間列表 UI 重構
 
 ### In Progress
 
@@ -60,6 +62,6 @@ Project Description
 - [x] 串接台鐵火車 api
 - [x] build request api
 - [x] 測試 input 到 trainList component 的 props 接收並確認 request 網址產出正確
-- [x] 解決複數 api 端口請求的 request 函數
+- [x] 解決複數 api 端口請求的 request 函式
 - [x] 實作查詢所需的 input key in 功能
 - [x] Material-UI Table 調整 css

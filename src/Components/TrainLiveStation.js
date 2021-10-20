@@ -27,7 +27,7 @@ export default function TrainLiveStation() {
 				headers: getAuthorizationHeader(),
 			})
 			.then((res) => {
-				console.log("raw:", res.data);
+				// console.log("raw:", res.data);
 				setRawData(res.data);
 			});
 	};
@@ -81,7 +81,7 @@ export default function TrainLiveStation() {
 			setOutputData([north, south]);
 		}
 	}, [rawData]);
-	console.log("output: ", outputData);
+	// console.log("output: ", outputData);
 	return (
 		<div className={classes.root}>
 			<form className={classes.form}>

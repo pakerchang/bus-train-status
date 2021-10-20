@@ -59,6 +59,7 @@ export default function TrainLiveStation() {
 
 	useEffect(() => {
 		if (rawData.length !== 0) {
+			// split data to Direction and filter past time data
 			const south = rawData.filter((item) => {
 				// const compareTime = differenceInMinutes(parse(item.ScheduledArrivalTime, "HH:mm:ss", new Date()), new Date());
 				// const result = compareTime >= 0;

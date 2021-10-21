@@ -27,14 +27,8 @@
   - [Netlify](https://www.netlify.com/)
 
 ---
-```mermaid
-    graph TD;
-    userStep1[選擇車站] --抓取 station info.json對應車站編號--> 
-    component1(combo box) --Request API-->
-    request1{API} -- Response -->
-    json1[RawData] --重組-->
-    render[資料渲染]
-```
+
+![基礎架構](src/UML/基本架構.png)
 
 ---
 

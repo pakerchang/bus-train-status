@@ -30,6 +30,7 @@ import {
 	IconButton,
 	Menu,
 	MenuItem,
+	TextField,
 } from "@material-ui/core";
 import {
 	Search,
@@ -44,7 +45,6 @@ import {
 import MenuIcon from "@material-ui/icons/Menu";
 import { green } from "@material-ui/core/colors";
 import clsx from "clsx";
-import TextField from "@material-ui/core/TextField";
 import Autocomplete from "@material-ui/lab/Autocomplete";
 import PropTypes from "prop-types";
 
@@ -97,7 +97,7 @@ export default function Home(scrollTarget) {
 				headers: getAuthorizationHeader(),
 			})
 			.then((res) => {
-				console.log("raw: ", res.data);
+				// console.log("raw: ", res.data);
 				setRawData(res.data.TrainTimetables);
 			})
 			.catch((error) => console.log(error));
@@ -110,7 +110,7 @@ export default function Home(scrollTarget) {
 			trainDestinationInput !== null &&
 			trainOriginInput !== trainDestinationInput
 		) {
-			// active fabProgress Component animation 
+			// active fabProgress Component animation
 			setSuccess(false);
 			setLoading(true);
 			// 將車站名轉換成車站編號
@@ -123,8 +123,8 @@ export default function Home(scrollTarget) {
 		}
 	};
 
-	// input css effect controller
 	useEffect(() => {
+		// input css effect controller
 		if (trainOriginInput !== null && trainDestinationInput !== null) {
 			setSuccess(true);
 		} else {
@@ -132,8 +132,8 @@ export default function Home(scrollTarget) {
 		}
 	}, [trainDestinationInput, trainOriginInput]);
 
-	// train list component
 	useEffect(() => {
+		// train list
 		if (rawData.length !== 0) {
 			const station = rawData.map((item) => {
 				return {
@@ -163,7 +163,6 @@ export default function Home(scrollTarget) {
 
 	return (
 		<div className={classes.home}>
-
 			<AppBar className={classes.appBar}>
 				<Toolbar>
 					<Typography variant="h6" className={classes.title}>
@@ -279,6 +278,7 @@ export default function Home(scrollTarget) {
 					)}
 				</div>
 			</form>
+
 			<div className={classes.footer}>
 				<IconButton onClick={(e) => menuClose("sourceCode")}>
 					<GitHub />
@@ -292,6 +292,7 @@ export default function Home(scrollTarget) {
 					<KeyboardArrowUp />
 				</Fab>
 			</ScrollTop>
+			
 			{/* <div className="home__searchBus">
 						<h2>公車時刻表</h2> */}
 			{/* select option */}

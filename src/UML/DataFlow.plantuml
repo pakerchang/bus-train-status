@@ -1,0 +1,26 @@
+@startuml 基本架構
+skinparam ArrowHeadColor none
+
+#SkyBlue:選擇車站(combo box);
+note right: 透過 stationInfo.json 解析選取車站的代號編碼投入 API 獲取資料
+-> request;
+- API
+note right: PTX 公共運輸整合資訊流通服務平臺
+-> response;
+- RawData
+-> map;
+- 資料重組
+note left
+車種
+起始站
+終點站
+車次
+出發時間
+抵達時間
+行駛方向
+end note
+- 資料輸出
+-> setOutputData;
+- 渲染畫面( Table )
+
+@enduml

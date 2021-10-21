@@ -4,7 +4,7 @@
 
 - [火車時刻查詢](https://train-bus-status.netlify.app/)
 
-- [台南、岡山、楠梓，新左營車站點即時狀態](https://train-bus-status.netlify.app/LiveStation)
+- [台南、岡山、楠梓，新左營車站即時狀態](https://train-bus-status.netlify.app/LiveStation)
 > 做給朋友用的 side project
 
 - [公車屍體](https://train-bus-status.netlify.app/Bus)
@@ -25,6 +25,16 @@
   - [React-Facebook-Login](https://github.com/keppelen/react-facebook-login)
 - Deploy:
   - [Netlify](https://www.netlify.com/)
+
+---
+```mermaid
+    graph TD;
+    userStep1[選擇車站] --抓取 station info.json對應車站編號--> 
+    component1(combo box) --Request API-->
+    request1{API} -- Response -->
+    json1[RawData] --重組-->
+    render[資料渲染]
+```
 
 ---
 

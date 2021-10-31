@@ -22,7 +22,6 @@
   - [Axios](https://github.com/axios/axios)
 - 登入:
   - [React-Google-Login](https://github.com/anthonyjgrove/react-google-login)
-  - [React-Facebook-Login](https://github.com/keppelen/react-facebook-login)
 - Deploy:
   - [Netlify](https://www.netlify.com/)
 

@@ -52,7 +52,7 @@ export default function Header() {
 		}
 	};
 
-	const responseGoogle = (res) => {
+	const responseGoogleLogin = (res) => {
 		setLogin(true);
 		if (res) {
 			localStorage.setItem(res.accessToken, JSON.stringify(res.profileObj));
@@ -63,15 +63,16 @@ export default function Header() {
 	const responseGoogleLogout = (res) => {
 		localStorage.clear();
 		setLoginMenu(null);
-		// setLogin(false);
+		setLogin(false);
+      setHandleModal(false);
 		console.log("logout", res);
 	};
 
-	console.log("user profile", userProfile);
+	// console.log("user profile", userProfile);
 
 	const modalBody = (
 		<div className={classes.modalPaper}>
-			<GoogleLogin clientId={googleLoginKey} onSuccess={responseGoogle} onFailure={responseGoogle} />
+			<GoogleLogin clientId={googleLoginKey} onSuccess={responseGoogleLogin} onFailure={responseGoogleLogin} />
 		</div>
 	);
 
@@ -113,7 +114,9 @@ export default function Header() {
 
 					{login === true ? (
 						<>
-							<Avatar src={userProfile.imageUrl} onClick={loginMenuClick} />
+							<IconButton color="inherit" size="small" onClick={loginMenuClick}>
+								<Avatar src={userProfile.imageUrl} />
+							</IconButton>
 							<Menu anchorEl={loginMenu} keepMounted open={Boolean(loginMenu)} onClose={menuClose("loginMenu")}>
 								<MenuItem>
 									<GoogleLogout
@@ -121,7 +124,7 @@ export default function Header() {
 										buttonText="Logout"
 										clientId={googleLoginKey}
 										onLogoutSuccess={responseGoogleLogout}
-										onFailure={responseGoogle}
+										onFailure={responseGoogleLogout}
 									/>
 								</MenuItem>
 							</Menu>

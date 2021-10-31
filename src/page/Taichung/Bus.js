@@ -5,22 +5,13 @@ import "./Bus.css";
 import { busOperator, taichungBus } from "../../requests";
 import getAuthorizationHeader from "../../apiKey";
 import axios from "axios";
-import {
-	Table,
-	TableBody,
-	TableCell,
-	TableContainer,
-	TableHead,
-	TableRow,
-} from "@material-ui/core";
+import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from "@material-ui/core";
 
 function Bus() {
 	const [cityInput, setCityInput] = useState("Taichung");
 	const [routeInput, setRouteInput] = useState("綠1");
-	const [originInput, setOriginInput] =
-		useState("北新國中");
-	const [destinationInput, setDestinationInput] =
-		useState("中山國中");
+	const [originInput, setOriginInput] = useState("北新國中");
+	const [destinationInput, setDestinationInput] = useState("中山國中");
 	const [data, setData] = useState([]);
 	const [operator, setOperator] = useState([]);
 	const [outputData, setOutputData] = useState();
@@ -49,11 +40,7 @@ function Bus() {
 
 	const searchBtn = (e) => {
 		e.preventDefault();
-		if (
-			routeInput &&
-			originInput &&
-			destinationInput !== ""
-		) {
+		if (routeInput && originInput && destinationInput !== "") {
 			fetchData();
 		} else {
 			alert("請輸入站別或路線");
@@ -65,17 +52,15 @@ function Bus() {
 		const station = data.map((item) => {
 			// 解 Stops Array
 			return item.Stops.map((stopsArray, index) => {
-				const result = stopsArray.TimeTables.map(
-					(timeArray) => {
-						return {
-							routeName: item.RouteName.Zh_tw,
-							stopID: stopsArray.StopID,
-							stationName: stopsArray.StopName.Zh_tw,
-							endStation: item.DestinationStopName.Zh_tw,
-							departTime: timeArray.ArrivalTime,
-						};
-					}
-				);
+				const result = stopsArray.TimeTables.map((timeArray) => {
+					return {
+						routeName: item.RouteName.Zh_tw,
+						stopID: stopsArray.StopID,
+						stationName: stopsArray.StopName.Zh_tw,
+						endStation: item.DestinationStopName.Zh_tw,
+						departTime: timeArray.ArrivalTime,
+					};
+				});
 				return {
 					order: index,
 					id: item.OperatorID,
@@ -97,23 +82,16 @@ function Bus() {
 		// console.log("operatorName: ", matchOperatorName);
 		//挑出起迄站
 		const findStation = station.map((item) => {
-			const departStation = item.find((match) =>
-				originInput.includes(match.stationName)
-			);
-			const destinationStation = item.find((match) =>
-				destinationInput.includes(match.stationName)
-			);
+			const departStation = item.find((match) => originInput.includes(match.stationName));
+			const destinationStation = item.find((match) => destinationInput.includes(match.stationName));
 			return { departStation, destinationStation };
 		});
 		// console.log("findstation: ", findStation);
-		matchOperatorName(findStation.id);
+		// matchOperatorName(findStation.id);
 		// console.log("sort: ", findStation.sort());
 		setOutputData(
 			findStation.find((item) => {
-				return (
-					item.departStation.order <
-					item.destinationStation.order
-				);
+				return item.departStation.order < item.destinationStation.order;
 			})
 		);
 	}, [data]);
@@ -145,48 +123,31 @@ function Bus() {
 						type="text"
 						placeholder="抵達站"
 						value={destinationInput}
-						onChange={(e) =>
-							setDestinationInput(e.target.value)
-						}
+						onChange={(e) => setDestinationInput(e.target.value)}
 					/>
-					<button
-						className="bus__searchBtn"
-						onClick={searchBtn}>
+					<button className="bus__searchBtn" onClick={searchBtn}>
 						Go
 					</button>
 
 					{outputData === undefined ? (
 						//防止頁面載入時提前render
 						<h3 className="bus__userTips">
-							因功能未完善，請完整輸入站牌及路線名稱，ex:
-							路線：14副2 、 站牌名： 四張犁(昌平路)
+							因功能未完善，請完整輸入站牌及路線名稱，ex: 路線：14副2 、 站牌名： 四張犁(昌平路)
 						</h3>
 					) : (
 						<TableContainer>
 							<Table aria-label="collapsible table">
 								<TableHead>
 									<TableRow>
-										<TableCell align="center">
-											路線
-										</TableCell>
+										<TableCell align="center">路線</TableCell>
 										{/* <TableCell align="center">
 											客運
 										</TableCell> */}
-										<TableCell align="center">
-											起點站
-										</TableCell>
-										<TableCell align="center">
-											發車時間
-										</TableCell>
-										<TableCell align="center">
-											目的地
-										</TableCell>
-										<TableCell align="center">
-											抵達時間
-										</TableCell>
-										<TableCell align="center">
-											終點站
-										</TableCell>
+										<TableCell align="center">起點站</TableCell>
+										<TableCell align="center">發車時間</TableCell>
+										<TableCell align="center">目的地</TableCell>
+										<TableCell align="center">抵達時間</TableCell>
+										<TableCell align="center">終點站</TableCell>
 									</TableRow>
 								</TableHead>
 								<TableBody>
@@ -196,36 +157,15 @@ function Bus() {
 											departItem.departTime.sort();
 											return (
 												<TableRow>
-													<TableCell align="center">
-														{departItem.routeName}
-													</TableCell>
+													<TableCell align="center">{departItem.routeName}</TableCell>
 													{/* <TableCell align="center">
 													客運
 												</TableCell> */}
-													<TableCell align="center">
-														{departItem.stationName}
-													</TableCell>
-													<TableCell align="center">
-														{departItem.departTime}
-													</TableCell>
-													<TableCell align="center">
-														{
-															outputData.destinationStation
-																.result[idx].stationName
-														}
-													</TableCell>
-													<TableCell align="center">
-														{
-															outputData.destinationStation
-																.result[idx].departTime
-														}
-													</TableCell>
-													<TableCell align="center">
-														{
-															outputData.destinationStation
-																.result[idx].endStation
-														}
-													</TableCell>
+													<TableCell align="center">{departItem.stationName}</TableCell>
+													<TableCell align="center">{departItem.departTime}</TableCell>
+													<TableCell align="center">{outputData.destinationStation.result[idx].stationName}</TableCell>
+													<TableCell align="center">{outputData.destinationStation.result[idx].departTime}</TableCell>
+													<TableCell align="center">{outputData.destinationStation.result[idx].endStation}</TableCell>
 												</TableRow>
 											);
 										}

@@ -5,6 +5,7 @@ import stationInfo from "../../json/stationInfo.json";
 //date
 import { format } from "date-fns";
 // component
+import Header from "../../Components/Header";
 // import BusList from "../../Components/BusList";
 // import TrainList from "../../Components/TrainList";
 // train list component
@@ -24,38 +25,23 @@ import {
 	useScrollTrigger,
 	Zoom,
 	CircularProgress,
-	AppBar,
-	Toolbar,
-	Typography,
 	IconButton,
-	Menu,
-	MenuItem,
 	TextField,
 } from "@material-ui/core";
-import {
-	Search,
-	ArrowRightAlt,
-	Train,
-	KeyboardArrowUp,
-	GitHub,
-	EmailRounded,
-	AccountCircleRounded,
-	Email,
-} from "@material-ui/icons";
-import MenuIcon from "@material-ui/icons/Menu";
+import { Search, ArrowRightAlt, Train, KeyboardArrowUp, GitHub, Email } from "@material-ui/icons";
 import { green } from "@material-ui/core/colors";
 import clsx from "clsx";
 import Autocomplete from "@material-ui/lab/Autocomplete";
 import PropTypes from "prop-types";
 
 export default function Home(scrollTarget) {
+	const classes = useStyles();
 	// Train input
 	const [trainOriginInput, setTrainOriginInput] = useState(null);
 	const [trainDestinationInput, setTrainDestinationInput] = useState(null);
 	// Bus input
 	// const [city, setCity] = useState("");
 	// const [busRoute, setBusRoute] = useState("藍幹線");
-	const classes = useStyles();
 	// 抓取當地時間
 	const date = format(new Date(), "yyyy-MM-dd");
 	// Progress Component
@@ -67,28 +53,6 @@ export default function Home(scrollTarget) {
 	const buttonClassName = clsx({
 		[classes.buttonSuccess]: success,
 	});
-
-	const [anchorEl, setAnchorEl] = React.useState(null);
-	const menuClick = (event) => {
-		setAnchorEl(event.currentTarget);
-	};
-	const menuClose = (props) => {
-		switch (props) {
-			case "github":
-				window.location.href = "https://github.com/pakerchang";
-				setAnchorEl(null);
-				break;
-			case "sourceCode":
-				window.location.href = "https://github.com/pakerchang/bus-train-status";
-				setAnchorEl(null);
-				break;
-			case "mail":
-				window.location.href = "mailto:pakerchang.project@gmail.com";
-			default:
-				setAnchorEl(null);
-				break;
-		}
-	};
 
 	const fetchData = async (originStation, endStation) => {
 		const reqURL = trainAPI(originStation, endStation, date);
@@ -161,40 +125,25 @@ export default function Home(scrollTarget) {
 	}, [rawData]);
 	// console.log("output: ", outputData);
 
+	const menuClose = (props) => () => {
+		switch (props) {
+			case "github":
+				window.location.href = "https://github.com/pakerchang";
+				break;
+			case "sourceCode":
+				window.location.href = "https://github.com/pakerchang/bus-train-status";
+				break;
+			case "mail":
+				window.location.href = "mailto:pakerchang.projectTrain-bus-status@gmail.com";
+				break;
+			default:
+				break;
+		}
+	};
+
 	return (
 		<div className={classes.home}>
-			<AppBar className={classes.appBar}>
-				<Toolbar>
-					<Typography variant="h6" className={classes.title}>
-						火車時刻表查詢
-					</Typography>
-					<IconButton
-						edge="start"
-						className={classes.menuButton}
-						color="inherit"
-						aria-label="menu"
-						aria-controls="simple-menu"
-						aria-haspopup="true"
-						onClick={menuClick}>
-						<MenuIcon />
-					</IconButton>
-					<Menu anchorEl={anchorEl} keepMounted open={Boolean(anchorEl)} onClose={menuClose}>
-						<MenuItem onClick={(e) => menuClose("github")}>
-							<GitHub /> <span style={{ marginLeft: 10 }}>Github</span>
-						</MenuItem>
-						<MenuItem onClick={(e) => menuClose("sourceCode")}>
-							<GitHub /> <span style={{ marginLeft: 10 }}>Source Code</span>
-						</MenuItem>
-						<MenuItem onClick={(e) => menuClose("mail")}>
-							<EmailRounded /> <span style={{ marginLeft: 10 }}>Contact</span>
-						</MenuItem>
-						<MenuItem>
-							<AccountCircleRounded />
-							<span style={{ marginLeft: 10 }}>Login</span>
-						</MenuItem>
-					</Menu>
-				</Toolbar>
-			</AppBar>
+			<Header />
 
 			<form className={classes.trainInput}>
 				<div className={classes.progressRoot}>
@@ -280,10 +229,10 @@ export default function Home(scrollTarget) {
 			</form>
 
 			<div className={classes.footer}>
-				<IconButton onClick={(e) => menuClose("sourceCode")}>
+				<IconButton onClick={menuClose("sourceCode")}>
 					<GitHub />
 				</IconButton>
-				<IconButton onClick={(e) => menuClose("mail")}>
+				<IconButton onClick={menuClose("mail")}>
 					<Email />
 				</IconButton>
 			</div>
@@ -292,7 +241,6 @@ export default function Home(scrollTarget) {
 					<KeyboardArrowUp />
 				</Fab>
 			</ScrollTop>
-			
 			{/* <div className="home__searchBus">
 						<h2>公車時刻表</h2> */}
 			{/* select option */}
@@ -347,9 +295,8 @@ ScrollTop.propTypes = {
 };
 
 const CustomTrainIcon = (props) => {
-	const { color, ...other } = props;
 	const classes = useStyles(props);
-	return <Train className={classes.trainIcon} {...other} />;
+	return <Train className={classes.trainIcon} />;
 };
 
 const useStyles = makeStyles((theme) => ({
@@ -362,15 +309,6 @@ const useStyles = makeStyles((theme) => ({
 		"& h3": {
 			marginTop: "50px",
 		},
-	},
-	menuButton: {
-		marginRight: theme.spacing(2),
-	},
-	title: {
-		flexGrow: 1,
-	},
-	appBar: {
-		marginBottom: "40px",
 	},
 	progressRoot: {
 		marginTop: "90px",
@@ -423,28 +361,20 @@ const useStyles = makeStyles((theme) => ({
 			switch (props.color) {
 				case "1":
 					return "#ff5000";
-
 				case "2":
 					return "#d00216";
-
 				case "3":
 					return "#ff8708";
-
 				case "4":
 					return "#ffd200";
-
 				case "5":
 					return "#00ace8";
-
 				case "6":
 					return "#0072B5";
-
 				case "7":
 					return "#a9a9a9";
-
 				case "10":
 					return "#00bfff";
-
 				default:
 					return console.log("SwitchColor Identify Error");
 			}

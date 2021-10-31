@@ -10,8 +10,8 @@ import {
 	Button,
 	Typography,
 } from "@material-ui/core";
-import { trainLiveStation } from "../requests";
-import getAuthorizationHeader from "../apiKey";
+import { trainLiveStation } from "../../requests";
+import getAuthorizationHeader from "../../apiKey";
 import axios from "axios";
 import { differenceInMinutes, format, parse } from "date-fns";
 
@@ -27,7 +27,7 @@ export default function TrainLiveStation() {
 				headers: getAuthorizationHeader(),
 			})
 			.then((res) => {
-				// console.log("raw:", res.data);
+				console.log("raw:", res.data);
 				setRawData(res.data);
 			});
 	};

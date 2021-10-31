@@ -27,9 +27,7 @@
   - [Netlify](https://www.netlify.com/)
 
 ---
-
-![基礎架構](src/UML/基本架構.png)
-
+![基礎架構](src/UML/基礎架構.png)
 ---
 
 ## Task Board:

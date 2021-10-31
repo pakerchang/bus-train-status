@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import Home from "./page/Home/Home.js";
-import TrainLiveStation from "./Components/TrainLiveStation.js";
+import TrainLiveStation from "./page/TrainLiveBoard/TrainLiveStation";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Bus from "./page/Taichung/Bus.js";
 // import BackToTop from "./BackToTop.js";

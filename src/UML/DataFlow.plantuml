@@ -1,7 +1,8 @@
-@startuml 基本架構
+@startuml 基礎架構
+!theme sandstone
 skinparam ArrowHeadColor none
 
-#SkyBlue:選擇車站(combo box);
+:選擇車站(combo box);
 note right: 透過 stationInfo.json 解析選取車站的代號編碼投入 API 獲取資料
 -> request;
 - API
@@ -21,6 +22,5 @@ note left
 end note
 - 資料輸出
 -> setOutputData;
-- 渲染畫面( Table )
-
+:渲染畫面 <Table>;
 @enduml

@@ -134,7 +134,7 @@ export default function Home(scrollTarget) {
 				window.location.href = "https://github.com/pakerchang/bus-train-status";
 				break;
 			case "mail":
-				window.location.href = "mailto:pakerchang.projectTrain-bus-status@gmail.com";
+				window.location.href = "https://mailto:pakerchang@gmail.com";
 				break;
 			default:
 				break;

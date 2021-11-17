@@ -4,7 +4,6 @@ import { GitHub, EmailRounded, AccountCircleRounded } from "@material-ui/icons";
 import MenuIcon from "@material-ui/icons/Menu";
 import { GoogleLogin, GoogleLogout } from "react-google-login";
 import { googleLoginKey } from "../apiKey";
-import { set } from "date-fns/esm";
 
 export default function Header() {
 	const classes = useStyles();
@@ -46,6 +45,7 @@ export default function Header() {
 				break;
 			case "loginMenu":
 				setLoginMenu(null);
+				break;
 			default:
 				setAnchorEl(null);
 				break;
@@ -55,16 +55,16 @@ export default function Header() {
 	const responseGoogleLogin = (res) => {
 		setLogin(true);
 		if (res) {
-			localStorage.setItem(res.accessToken, JSON.stringify(res.profileObj));
-			setUserProfile(JSON.parse(localStorage.getItem(res.accessToken)));
+			setUserProfile(res.profileObj);
+			localStorage.setItem("lastUser", JSON.stringify(res.profileObj));
 		}
-		// console.log(res);
+		console.log(res);
 	};
 	const responseGoogleLogout = (res) => {
 		localStorage.clear();
 		setLoginMenu(null);
 		setLogin(false);
-      setHandleModal(false);
+		setHandleModal(false);
 		console.log("logout", res);
 	};
 
@@ -81,6 +81,8 @@ export default function Header() {
 			setLogin(false);
 		} else {
 			setLogin(true);
+			setUserProfile(localStorage.getItem("lastUser"));
+			console.log("userProfile Set");
 		}
 	}, []);
 
@@ -115,6 +117,7 @@ export default function Header() {
 					{login === true ? (
 						<>
 							<IconButton color="inherit" size="small" onClick={loginMenuClick}>
+								{console.log("render login",userProfile)}
 								<Avatar src={userProfile.imageUrl} />
 							</IconButton>
 							<Menu anchorEl={loginMenu} keepMounted open={Boolean(loginMenu)} onClose={menuClose("loginMenu")}>

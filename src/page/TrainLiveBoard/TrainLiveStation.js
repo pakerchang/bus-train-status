@@ -80,7 +80,7 @@ export default function TrainLiveStation() {
 	useEffect(() => {
 		if (stationCode !== undefined) {
 			setInterval(() => {
-				console.log("interval execute", stationCode);
+				// console.log("interval execute", stationCode);
 				fetchData(stationCode);
 			}, 1000 * 15);
 		}

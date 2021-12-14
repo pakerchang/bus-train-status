@@ -19,6 +19,7 @@ export default function TrainLiveStation() {
 	const classes = useStyles();
 	const [rawData, setRawData] = useState([]);
 	const [outputData, setOutputData] = useState();
+	const [stationCode, setStationCode] = useState();
 
 	const fetchData = async (stationID) => {
 		const url = trainLiveStation(stationID);
@@ -27,11 +28,12 @@ export default function TrainLiveStation() {
 				headers: getAuthorizationHeader(),
 			})
 			.then((res) => {
-				console.log("raw:", res.data);
 				setRawData(res.data);
 			});
 	};
+
 	const stationClick = (station) => {
+		setStationCode(station);
 		switch (station) {
 			case 4220:
 				return fetchData(station);
@@ -50,7 +52,6 @@ export default function TrainLiveStation() {
 
 	useEffect(() => {
 		// 阻止 ios 橡皮筋滾動特效
-		// console.log("execute");
 		window.addEventListener("touchmove", {}, { passive: false });
 		return () => {
 			window.removeEventListener("touchmove", {});
@@ -61,10 +62,6 @@ export default function TrainLiveStation() {
 		if (rawData.length !== 0) {
 			// split data to Direction and filter past time data
 			const south = rawData.filter((item) => {
-				// const compareTime = differenceInMinutes(parse(item.ScheduledArrivalTime, "HH:mm:ss", new Date()), new Date());
-				// const result = compareTime >= 0;
-				// console.log("compare: ", compareTime);
-				// console.log("result: ", result);
 				return (
 					item.Direction === 1 &&
 					differenceInMinutes(parse(item.ScheduledArrivalTime, "HH:mm:ss", new Date()), new Date()) > 0
@@ -76,12 +73,19 @@ export default function TrainLiveStation() {
 					differenceInMinutes(parse(item.ScheduledArrivalTime, "HH:mm:ss", new Date()), new Date()) > 0
 				);
 			});
-			// console.log("南:", south);
-			// console.log("北:", north);
 			setOutputData([north, south]);
 		}
 	}, [rawData]);
-	// console.log("output: ", outputData);
+
+	useEffect(() => {
+		if (stationCode !== undefined) {
+			setInterval(() => {
+				console.log("interval execute", stationCode);
+				fetchData(stationCode);
+			}, 1000 * 15);
+		}
+	}, [stationCode]);
+
 	return (
 		<div className={classes.root}>
 			<form className={classes.form}>
@@ -107,76 +111,84 @@ export default function TrainLiveStation() {
 						北上
 					</Typography>
 					<TableContainer className={classes.tableRoot}>
-						<Table className={classes.table} aria-label="caption table">
-							<TableHead>
-								<TableRow>
-									<TableCell style={{ textAlign: "center" }}>車站</TableCell>
-									<TableCell style={{ textAlign: "center" }}>車種</TableCell>
-									<TableCell style={{ textAlign: "center" }}>到站</TableCell>
-									<TableCell style={{ textAlign: "center" }}>離站</TableCell>
-									<TableCell style={{ textAlign: "center" }}>誤點</TableCell>
-								</TableRow>
-							</TableHead>
-							<TableBody>
-								{outputData[0].map((item) => {
-									return (
-										<TableRow key={item.TrainNo}>
-											<TableCell className={classes.tableBodyCell}>{item.EndingStationName.Zh_tw}</TableCell>
-											<TableCell className={classes.tableBodyCell}>
-												{item.TrainTypeName.Zh_tw.replace(/\([^()]*\)/g, "")}
-											</TableCell>
-											<TableCell className={classes.tableBodyCell}>
-												{format(parse(item.ScheduledArrivalTime, "HH:mm:ss", new Date()), "HH:mm")}
-											</TableCell>
-											<TableCell className={classes.tableBodyCell}>
-												{format(parse(item.ScheduledArrivalTime, "HH:mm:ss", new Date()), "HH:mm")}
-											</TableCell>
-											<TableCell className={classes.tableBodyCell}>
-												{item.DelayTime === 0 ? "準點" : "晚 " + item.DelayTime + " 分"}
-											</TableCell>
-										</TableRow>
-									);
-								})}
-							</TableBody>
-						</Table>
+						{outputData[0].length === 0 ? (
+							<h3 className={classes.h3}>無資料</h3>
+						) : (
+							<Table className={classes.table} aria-label="caption table">
+								<TableHead>
+									<TableRow>
+										<TableCell style={{ textAlign: "center" }}>車站</TableCell>
+										<TableCell style={{ textAlign: "center" }}>車種</TableCell>
+										<TableCell style={{ textAlign: "center" }}>到站</TableCell>
+										<TableCell style={{ textAlign: "center" }}>離站</TableCell>
+										<TableCell style={{ textAlign: "center" }}>誤點</TableCell>
+									</TableRow>
+								</TableHead>
+								<TableBody>
+									{outputData[0].map((item) => {
+										return (
+											<TableRow key={item.TrainNo}>
+												<TableCell className={classes.tableBodyCell}>{item.EndingStationName.Zh_tw}</TableCell>
+												<TableCell className={classes.tableBodyCell}>
+													{item.TrainTypeName.Zh_tw.replace(/\([^()]*\)/g, "")}
+												</TableCell>
+												<TableCell className={classes.tableBodyCell}>
+													{format(parse(item.ScheduledArrivalTime, "HH:mm:ss", new Date()), "HH:mm")}
+												</TableCell>
+												<TableCell className={classes.tableBodyCell}>
+													{format(parse(item.ScheduledArrivalTime, "HH:mm:ss", new Date()), "HH:mm")}
+												</TableCell>
+												<TableCell className={classes.tableBodyCell}>
+													{item.DelayTime === 0 ? "準點" : "晚 " + item.DelayTime + " 分"}
+												</TableCell>
+											</TableRow>
+										);
+									})}
+								</TableBody>
+							</Table>
+						)}
 					</TableContainer>
 
 					<Typography variant="h4" className={classes.textDiv}>
 						南下
 					</Typography>
 					<TableContainer className={classes.tableRoot}>
-						<Table className={classes.table} aria-label="caption table">
-							<TableHead>
-								<TableRow>
-									<TableCell style={{ textAlign: "center" }}>車站</TableCell>
-									<TableCell style={{ textAlign: "center" }}>車種</TableCell>
-									<TableCell style={{ textAlign: "center" }}>到站</TableCell>
-									<TableCell style={{ textAlign: "center" }}>離站</TableCell>
-									<TableCell style={{ textAlign: "center" }}>誤點</TableCell>
-								</TableRow>
-							</TableHead>
-							<TableBody>
-								{outputData[1].map((item) => {
-									return (
-										<TableRow key={item.TrainNo}>
-											<TableCell className={classes.tableBodyCell}>{item.EndingStationName.Zh_tw}</TableCell>
-											<TableCell className={classes.tableBodyCell}>
-												{item.TrainTypeName.Zh_tw.replace(/\([^()]*\)/g, "")}
-											</TableCell>
-											<TableCell className={classes.tableBodyCell}>
-												{format(parse(item.ScheduledArrivalTime, "HH:mm:ss", new Date()), "HH:mm")}
-											</TableCell>
-											<TableCell className={classes.tableBodyCell}>
-												{format(parse(item.ScheduledArrivalTime, "HH:mm:ss", new Date()), "HH:mm")}
-											</TableCell>
-											<TableCell className={classes.tableBodyCell}>
-												{item.DelayTime === 0 ? "準點" : "晚 " + item.DelayTime + " 分"}
-											</TableCell>
-										</TableRow>
-									);
-								})}
-							</TableBody>
-						</Table>
+						{outputData[1].length === 0 ? (
+							<h3 className={classes.h3}>無資料</h3>
+						) : (
+							<Table className={classes.table} aria-label="caption table">
+								<TableHead>
+									<TableRow>
+										<TableCell style={{ textAlign: "center" }}>車站</TableCell>
+										<TableCell style={{ textAlign: "center" }}>車種</TableCell>
+										<TableCell style={{ textAlign: "center" }}>到站</TableCell>
+										<TableCell style={{ textAlign: "center" }}>離站</TableCell>
+										<TableCell style={{ textAlign: "center" }}>誤點</TableCell>
+									</TableRow>
+								</TableHead>
+								<TableBody>
+									{outputData[1].map((item) => {
+										return (
+											<TableRow key={item.TrainNo}>
+												<TableCell className={classes.tableBodyCell}>{item.EndingStationName.Zh_tw}</TableCell>
+												<TableCell className={classes.tableBodyCell}>
+													{item.TrainTypeName.Zh_tw.replace(/\([^()]*\)/g, "")}
+												</TableCell>
+												<TableCell className={classes.tableBodyCell}>
+													{format(parse(item.ScheduledArrivalTime, "HH:mm:ss", new Date()), "HH:mm")}
+												</TableCell>
+												<TableCell className={classes.tableBodyCell}>
+													{format(parse(item.ScheduledArrivalTime, "HH:mm:ss", new Date()), "HH:mm")}
+												</TableCell>
+												<TableCell className={classes.tableBodyCell}>
+													{item.DelayTime === 0 ? "準點" : "晚 " + item.DelayTime + " 分"}
+												</TableCell>
+											</TableRow>
+										);
+									})}
+								</TableBody>
+							</Table>
+						)}
 					</TableContainer>
 				</div>
 			)}
@@ -218,5 +230,8 @@ const useStyles = makeStyles({
 		textAlign: "center",
 		fontSize: 12,
 		fontFamily: ["Saira Condensed", "sans-serif"],
+	},
+	h3: {
+		margin: 30,
 	},
 });

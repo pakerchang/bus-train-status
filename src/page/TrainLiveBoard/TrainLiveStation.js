@@ -85,6 +85,7 @@ export default function TrainLiveStation() {
 		if (stationCode !== undefined) {
 			refreshTimer = setInterval(() => {
 				console.log(stationCode);
+				fetchData(stationCode);
 				setIntervalID(refreshTimer);
 			}, 1000);
 		}

@@ -18,8 +18,10 @@ import { differenceInMinutes, format, parse } from "date-fns";
 export default function TrainLiveStation() {
 	const classes = useStyles();
 	const [rawData, setRawData] = useState([]);
-	const [outputData, setOutputData] = useState();
+	const [outputData, setOutputData] = useState([]);
 	const [stationCode, setStationCode] = useState();
+	const [intervalID, setIntervalID] = useState();
+	let refreshTimer;
 
 	const fetchData = async (stationID) => {
 		const url = trainLiveStation(stationID);
@@ -28,6 +30,7 @@ export default function TrainLiveStation() {
 				headers: getAuthorizationHeader(),
 			})
 			.then((res) => {
+				// console.log(res.data);
 				setRawData(res.data);
 			});
 	};
@@ -78,11 +81,12 @@ export default function TrainLiveStation() {
 	}, [rawData]);
 
 	useEffect(() => {
+		clearInterval(intervalID);
 		if (stationCode !== undefined) {
-			setInterval(() => {
-				// console.log("interval execute", stationCode);
-				fetchData(stationCode);
-			}, 1000 * 15);
+			refreshTimer = setInterval(() => {
+				console.log(stationCode);
+				setIntervalID(refreshTimer);
+			}, 1000);
 		}
 	}, [stationCode]);
 
@@ -102,7 +106,7 @@ export default function TrainLiveStation() {
 					新左營
 				</Button>
 			</form>
-			{outputData === undefined ? (
+			{outputData.length === 0 ? (
 				<h3>No Data</h3>
 			) : (
 				// div 會吃到原 body 的背景顏色或區域延展問題導致下半部分區塊背景色會呈現白色，所以直接複寫把顏色修正回原設定的目標色

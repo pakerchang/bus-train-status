@@ -81,14 +81,14 @@ export default function TrainLiveStation() {
 	}, [rawData]);
 
 	useEffect(() => {
-		clearInterval(intervalID);
 		if (stationCode !== undefined) {
-			refreshTimer = setInterval(() => {
-				console.log(stationCode);
+			clearInterval(intervalID);
+			refreshTimer = window.setInterval(() => {
+				// console.log(stationCode);
 				fetchData(stationCode);
-				setIntervalID(refreshTimer);
-			}, 1000);
+			}, 1000 * 15);
 		}
+		setIntervalID(refreshTimer);
 	}, [stationCode]);
 
 	return (
